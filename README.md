@@ -195,32 +195,71 @@ Then you will get 8 new fields with the information of GDBIG in VCF INFO:
 
 ```
 ##fileformat=VCFv4.2
-##ALT=<ID=NON_REF,Description="Represents any possible alternative allele at this location">
-##FILTER=<ID=LowQual,Description="Low quality">
+##FILTER=<ID=PASS,Description="All filters passed">
+##FORMAT=<ID=DS,Number=1,Type=Float,Description="estimated ALT dose [P(RA) + P(AA)]">
+##FORMAT=<ID=GP,Number=G,Type=Float,Description="Estimated Genotype Probability">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants  --output bigcs.chromosomes/bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.chr22.sites_only.vcf.gz --exclude-non-variants true --remove-unused-alternates true --variant bigcs.chromosomes/bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.chr22.vcf.gz --reference /WORK/gzfezx_shhli_3/BioDatahub/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa --sites-only-vcf-output true  --invertSelect false --exclude-filtered false --preserve-alleles false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-vcf-codec false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.7.0",Date="February 1, 2021 4:46:44 PM CST">
 ##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
 ##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
 ##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
-##INFO=<ID=BaseQRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities">
-##reference=file:///home/tools/hg19_reference/ucsc.hg19.fasta
-##INFO=<ID=GDBIG_AN,Number=1,Type=Integer,Description="Number of Alleles in Samples with Coverage from GDBIG_hg19_v1.0">
-##INFO=<ID=GDBIG_AC,Number=A,Type=Integer,Description="Alternate Allele Counts in Samples with Coverage from GDBIG_hg19_v1.0">
-##INFO=<ID=GDBIG_AF,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_hg19_v1.0">
-##INFO=<ID=GDBIG_FILTER,Number=A,Type=Float,Description="Filter from GDBIG_hg19_v1.0">
+##INFO=<ID=AR2,Number=1,Type=Float,Description="Allelic R-Squared: estimated correlation between most probable ALT dose and true ALT dose">
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Consequence annotations from Ensembl VEP. Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|EXON|INTRON|HGVSc|HGVSp|cDNA_position|CDS_position|Protein_position|Amino_acids|Codons|Existing_variation|DISTANCE|STRAND|FLAGS|VARIANT_CLASS|SYMBOL_SOURCE|HGNC_ID|CANONICAL|TSL|APPRIS|CCDS|ENSP|SWISSPROT|TREMBL|UNIPARC|GENE_PHENO|SIFT|PolyPhen|DOMAINS|miRNA|HGVS_OFFSET|AF|AFR_AF|AMR_AF|EAS_AF|EUR_AF|SAS_AF|AA_AF|EA_AF|gnomAD_AF|gnomAD_AFR_AF|gnomAD_AMR_AF|gnomAD_ASJ_AF|gnomAD_EAS_AF|gnomAD_FIN_AF|gnomAD_NFE_AF|gnomAD_OTH_AF|gnomAD_SAS_AF|MAX_AF|MAX_AF_POPS|CLIN_SIG|SOMATIC|PHENO|PUBMED|MOTIF_NAME|MOTIF_POS|HIGH_INF_POS|MOTIF_SCORE_CHANGE|LoF|LoF_filter|LoF_flags|LoF_info">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=DR2,Number=1,Type=Float,Description="Dosage R-Squared: estimated correlation between estimated ALT dose [P(RA) + 2*P(AA)] and true ALT dose">
+##LoF=Loss-of-function annotation (HC = High Confidence; LC = Low Confidence)
+##LoF_filter=Reason for LoF not being HC
+##LoF_flags=Possible warning flags for LoF
+##LoF_info=Info used for LoF annotation
+##VEP="v95" time="2021-01-11 12:04:25" cache="/WORK/gzfezx_shhli_3/BioSoftware/VEP/cache/homo_sapiens/95_GRCh38" ensembl-funcgen=95.94439f4 ensembl-variation=95.858de3e ensembl-io=95.bd1a78d ensembl=95.4f83453 1000genomes="phase3" COSMIC="86" ClinVar="201810" ESP="V2-SSA137" HGMD-PUBLIC="20174" assembly="GRCh38.p12" dbSNP="151" gencode="GENCODE 29" genebuild="2014-07" gnomAD="170228" polyphen="2.2.2" regbuild="1.0" sift="sift5.2.2"
+##bcftools_concatVersion=1.9+htslib-1.9
+##bcftools_normCommand=norm -d none bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.vcf.gz; Date=Thu Jan 28 14:32:00 2021
+##bcftools_normVersion=1.9+htslib-1.9
+##bcftools_viewCommand=view --trim-alt-alleles --exclude-uncalled -c 1 --samples-file ../bigcs.SampleQC.sample.list --threads 10 -O z -o bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.vcf.gz t.vcf.gz; Date=Sat Jan 23 21:18:33 2021
+##bcftools_viewVersion=1.9+htslib-1.9
+##contig=<ID=chr1,length=248956422,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr2,length=242193529,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr3,length=198295559,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr4,length=190214555,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr5,length=181538259,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr6,length=170805979,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr7,length=159345973,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr8,length=145138636,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr9,length=138394717,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr10,length=133797422,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr11,length=135086622,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr12,length=133275309,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr13,length=114364328,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14,length=107043718,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr15,length=101991189,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr16,length=90338345,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr17,length=83257441,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr18,length=80373285,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr19,length=58617616,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr20,length=64444167,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr21,length=46709983,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22,length=50818468,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrX,length=156040895,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrY,length=57227415,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrM,length=16569,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##filedate=20201214
+##reference=file:/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa##source="beagle.jar (r1399)"
+##source=SelectVariants
+##INFO=<ID=GDBIG_AF,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0">
+##INFO=<ID=GDBIG_AF_SouthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in SouthChina region">
+##INFO=<ID=GDBIG_AF_CentralChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in CentralChina region">
+##INFO=<ID=GDBIG_AF_EastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in EastChina region">
+##INFO=<ID=GDBIG_AF_SouthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in SouthwestChina region">
+##INFO=<ID=GDBIG_AF_NortheastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NortheastChina region">
+##INFO=<ID=GDBIG_AF_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthwestChina region">
+##INFO=<ID=GDBIG_AF_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthChina region">
 #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO
-chr21   9413612 .       C       T       6906.62 .       AC=25;AF=0.313;AN=80;BaseQRankSum=0.425;GDBIG_AC=2459;GDBIG_AF=0.207525;GDBIG_AN=11834;GDBIG_FILTER=PASS
-chr21   9413629 .       C       T       8028.88 .       AC=30;AF=0.375;AN=80;BaseQRankSum=-1.200e+00;GDBIG_AC=6906;GDBIG_AF=0.305445;GDBIG_AN=22406;GDBIG_FILTER=PASS
-chr21   9413700 .       G       A       7723.82 .       AC=30;AF=0.375;AN=80;BaseQRankSum=-9.000e-02
-chr21   9413735 .       C       A       10121.72        .       AC=35;AF=0.438;AN=80;BaseQRankSum=0.977;GDBIG_AC=2385;GDBIG_AF=0.283965;GDBIG_AN=8382;GDBIG_FILTER=PASS
-chr21   9413839 .       C       T       8192.08 .       AC=28;AF=0.350;AN=80;BaseQRankSum=-5.200e-02
-chr21   9413840 .       C       A       11514.35        .       AC=38;AF=0.475;AN=80;BaseQRankSum=0.253
-chr21   9413870 .       T       C       7390.60 .       AC=26;AF=0.325;AN=80;BaseQRankSum=-4.270e-01
-chr21   9413880 .       T       A       146.96  .       AC=1;AF=0.013;AN=80;BaseQRankSum=2.12;ClippingRankSum=0.00
-chr21   9413909 .       G       A       1131.78 .       AC=10;AF=0.125;AN=80;BaseQRankSum=0.549;GDBIG_AC=209;GDBIG_AF=0.01507;GDBIG_AN=13683;GDBIG_FILTER=PASS
-chr21   9413913 .       C       T       8120.65 .       AC=28;AF=0.350;AN=80;BaseQRankSum=-4.390e-01;GDBIG_AC=2870;GDBIG_AF=0.205597;GDBIG_AN=13955;GDBIG_FILTER=PASS
-chr21   9413945 .       T       C       43787.68        .       AC=71;AF=0.888;AN=80;BaseQRankSum=0.089
-chr21   9413995 .       C       T       9632.44 .       AC=29;AF=0.363;AN=80;BaseQRankSum=0.747
-chr21   9413996 .       A       G       41996.48        .       AC=71;AF=0.888;AN=80;BaseQRankSum=-1.242e+00;GDBIG_AC=3308;GDBIG_AF=0.688533;GDBIG_AN=4790;GDBIG_FILTER=PASS
-chr21   9414003 .       T       C       4256.54 .       AC=19;AF=0.238;AN=80;BaseQRankSum=-6.030e-01
+chr22   10515882        rs1490973086    G       A       .       PASS    GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_EastChina=0.113487;GDBIG_AF_EastChina=0.113487;GDBIG_AF_SouthwestChina=0.078571;GDBIG_AF_NortheastChina=0.098837;AR2=0.63;AR2=0.63;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1490973086||||SNV|||||||||||||||||||||||||||||||||||||||||||||||
+chr22   10516264        .       TAC     T       .       PASS    GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0.001645;GDBIG_AF_EastChina=0.001645;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;AR2=0.78;AR2=0.78;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||
+chr22   10516615        rs1228174166    TTTG    T       .       PASS    GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;AR2=0.221;AR2=0.221;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1228174166||||deletion|||||||||||||||||||||||||||||||||||||||||||||||
+chr22   10518420        rs1177693979    CA      C       .       PASS    GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;AR2=0.547;AR2=0.547;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1177693979||||deletion|||||||||||||||||||||||||||||||||||||||||||||||
+chr22   10519243        rs1186022611    A       AG      .       PASS    GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;AR2=0.673;AR2=0.673;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||rs1186022611||||insertion|||||||||||||||||||||||||||||||||||||||||||||||
+
 ```
 
 Citation
