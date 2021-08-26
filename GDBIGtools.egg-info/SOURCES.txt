@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+GDBIGtools/GDBIGtools.py
+GDBIGtools/__init__.py
+GDBIGtools.egg-info/PKG-INFO
+GDBIGtools.egg-info/SOURCES.txt
+GDBIGtools.egg-info/dependency_links.txt
+GDBIGtools.egg-info/entry_points.txt
+GDBIGtools.egg-info/requires.txt
+GDBIGtools.egg-info/top_level.txt

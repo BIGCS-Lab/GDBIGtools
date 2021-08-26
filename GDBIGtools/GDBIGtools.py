@@ -233,7 +233,11 @@ def annotate(input_vcf):
                 GDBIG_variant = GDBIG_variant_list[0]
                 if GDBIG_variant[4].upper() in alt.split(',') and GDBIG_variant[3].upper() == ref:
                     new_info, info_set = [], set()
-                    for f in GDBIG_variant[7].split(';') + in_fields[7].split(';'):
+                    if in_fields[7] == ".":
+                        list_info = GDBIG_variant[7].split(';')
+                    else:
+                        list_info = GDBIG_variant[7].split(';') + in_fields[7].split(';')
+                    for f in list_info:
                         for n in f.split('=')[0]:
                             if n not in info_set:
                                 new_info.append(f)
