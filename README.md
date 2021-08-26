@@ -3,7 +3,7 @@ GDBIGtools: A command line tools for GDBIG varaints browser
 ===========================================================
 
 [![PyPI Version](https://img.shields.io/pypi/v/GDBIGtools.svg)](https://pypi.org/project/GDBIGtools/)
-[![License](https://img.shields.io/pypi/l/GDBIGtools.svg)](https://github.com/aiyacharley/GDBIGtools/blob/master/LICENSE)
+[![License](https://img.shields.io/pypi/l/GDBIGtools.svg)](https://github.com/BIGCS-Lab/GDBIGtools/blob/master/LICENSE)
 
 Introduction
 ------------
@@ -40,7 +40,7 @@ Help
 ------------
 type `GDBIGtools -h/--help` for detail.
 ```
-Usage: GDBIGtools.py [OPTIONS] COMMAND [ARGS]...
+Usage: GDBIGtools [OPTIONS] COMMAND [ARGS]...
 
 Options:
   -h, --help  Show this message and exit.
