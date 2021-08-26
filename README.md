@@ -199,7 +199,6 @@ Then you will get 8 new fields with the information of GDBIG in VCF INFO:
 ##FORMAT=<ID=DS,Number=1,Type=Float,Description="estimated ALT dose [P(RA) + P(AA)]">
 ##FORMAT=<ID=GP,Number=G,Type=Float,Description="Estimated Genotype Probability">
 ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
-##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants  --output bigcs.chromosomes/bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.chr22.sites_only.vcf.gz --exclude-non-variants true --remove-unused-alternates true --variant bigcs.chromosomes/bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.chr22.vcf.gz --reference /WORK/gzfezx_shhli_3/BioDatahub/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa --sites-only-vcf-output true  --invertSelect false --exclude-filtered false --preserve-alleles false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-vcf-codec false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.7.0",Date="February 1, 2021 4:46:44 PM CST">
 ##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
 ##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
 ##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
@@ -211,37 +210,12 @@ Then you will get 8 new fields with the information of GDBIG in VCF INFO:
 ##LoF_filter=Reason for LoF not being HC
 ##LoF_flags=Possible warning flags for LoF
 ##LoF_info=Info used for LoF annotation
-##VEP="v95" time="2021-01-11 12:04:25" cache="/WORK/gzfezx_shhli_3/BioSoftware/VEP/cache/homo_sapiens/95_GRCh38" ensembl-funcgen=95.94439f4 ensembl-variation=95.858de3e ensembl-io=95.bd1a78d ensembl=95.4f83453 1000genomes="phase3" COSMIC="86" ClinVar="201810" ESP="V2-SSA137" HGMD-PUBLIC="20174" assembly="GRCh38.p12" dbSNP="151" gencode="GENCODE 29" genebuild="2014-07" gnomAD="170228" polyphen="2.2.2" regbuild="1.0" sift="sift5.2.2"
+##VEP="v95" time="2021-01-11 12:04:25" cache="homo_sapiens/95_GRCh38" ensembl-funcgen=95.94439f4 ensembl-variation=95.858de3e ensembl-io=95.bd1a78d ensembl=95.4f83453 1000genomes="phase3" COSMIC="86" ClinVar="201810" ESP="V2-SSA137" HGMD-PUBLIC="20174" assembly="GRCh38.p12" dbSNP="151" gencode="GENCODE 29" genebuild="2014-07" gnomAD="170228" polyphen="2.2.2" regbuild="1.0" sift="sift5.2.2"
 ##bcftools_concatVersion=1.9+htslib-1.9
 ##bcftools_normCommand=norm -d none bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.vcf.gz; Date=Thu Jan 28 14:32:00 2021
 ##bcftools_normVersion=1.9+htslib-1.9
 ##bcftools_viewCommand=view --trim-alt-alleles --exclude-uncalled -c 1 --samples-file ../bigcs.SampleQC.sample.list --threads 10 -O z -o bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.vcf.gz t.vcf.gz; Date=Sat Jan 23 21:18:33 2021
 ##bcftools_viewVersion=1.9+htslib-1.9
-##contig=<ID=chr1,length=248956422,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr2,length=242193529,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr3,length=198295559,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr4,length=190214555,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr5,length=181538259,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr6,length=170805979,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr7,length=159345973,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr8,length=145138636,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr9,length=138394717,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr10,length=133797422,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr11,length=135086622,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr12,length=133275309,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr13,length=114364328,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr14,length=107043718,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr15,length=101991189,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr16,length=90338345,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr17,length=83257441,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr18,length=80373285,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr19,length=58617616,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr20,length=64444167,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr21,length=46709983,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chr22,length=50818468,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chrX,length=156040895,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chrY,length=57227415,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
-##contig=<ID=chrM,length=16569,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
 ##filedate=20201214
 ##reference=file:/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa##source="beagle.jar (r1399)"
 ##source=SelectVariants
