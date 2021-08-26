@@ -1,0 +1,300 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##FORMAT=<ID=DS,Number=1,Type=Float,Description="estimated ALT dose [P(RA) + P(AA)]">
+##FORMAT=<ID=GP,Number=G,Type=Float,Description="Estimated Genotype Probability">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##GATKCommandLine=<ID=SelectVariants,CommandLine="SelectVariants  --output bigcs.chromosomes/bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.chr22.sites_only.vcf.gz --exclude-non-variants true --remove-unused-alternates true --variant bigcs.chromosomes/bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.chr22.vcf.gz --reference /WORK/gzfezx_shhli_3/BioDatahub/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa --sites-only-vcf-output true  --invertSelect false --exclude-filtered false --preserve-alleles false --restrict-alleles-to ALL --keep-original-ac false --keep-original-dp false --mendelian-violation false --invert-mendelian-violation false --mendelian-violation-qual-threshold 0.0 --select-random-fraction 0.0 --remove-fraction-genotypes 0.0 --fully-decode false --max-indel-size 2147483647 --min-indel-size 0 --max-filtered-genotypes 2147483647 --min-filtered-genotypes 0 --max-fraction-filtered-genotypes 1.0 --min-fraction-filtered-genotypes 0.0 --max-nocall-number 2147483647 --max-nocall-fraction 1.0 --set-filtered-gt-to-nocall false --allow-nonoverlapping-command-line-samples false --suppress-reference-path false --genomicsdb-use-vcf-codec false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false",Version="4.1.7.0",Date="February 1, 2021 4:46:44 PM CST">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=AR2,Number=1,Type=Float,Description="Allelic R-Squared: estimated correlation between most probable ALT dose and true ALT dose">
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Consequence annotations from Ensembl VEP. Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|EXON|INTRON|HGVSc|HGVSp|cDNA_position|CDS_position|Protein_position|Amino_acids|Codons|Existing_variation|DISTANCE|STRAND|FLAGS|VARIANT_CLASS|SYMBOL_SOURCE|HGNC_ID|CANONICAL|TSL|APPRIS|CCDS|ENSP|SWISSPROT|TREMBL|UNIPARC|GENE_PHENO|SIFT|PolyPhen|DOMAINS|miRNA|HGVS_OFFSET|AF|AFR_AF|AMR_AF|EAS_AF|EUR_AF|SAS_AF|AA_AF|EA_AF|gnomAD_AF|gnomAD_AFR_AF|gnomAD_AMR_AF|gnomAD_ASJ_AF|gnomAD_EAS_AF|gnomAD_FIN_AF|gnomAD_NFE_AF|gnomAD_OTH_AF|gnomAD_SAS_AF|MAX_AF|MAX_AF_POPS|CLIN_SIG|SOMATIC|PHENO|PUBMED|MOTIF_NAME|MOTIF_POS|HIGH_INF_POS|MOTIF_SCORE_CHANGE|LoF|LoF_filter|LoF_flags|LoF_info">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=DR2,Number=1,Type=Float,Description="Dosage R-Squared: estimated correlation between estimated ALT dose [P(RA) + 2*P(AA)] and true ALT dose">
+##LoF=Loss-of-function annotation (HC = High Confidence; LC = Low Confidence)
+##LoF_filter=Reason for LoF not being HC
+##LoF_flags=Possible warning flags for LoF
+##LoF_info=Info used for LoF annotation
+##VEP="v95" time="2021-01-11 12:04:25" cache="/WORK/gzfezx_shhli_3/BioSoftware/VEP/cache/homo_sapiens/95_GRCh38" ensembl-funcgen=95.94439f4 ensembl-variation=95.858de3e ensembl-io=95.bd1a78d ensembl=95.4f83453 1000genomes="phase3" COSMIC="86" ClinVar="201810" ESP="V2-SSA137" HGMD-PUBLIC="20174" assembly="GRCh38.p12" dbSNP="151" gencode="GENCODE 29" genebuild="2014-07" gnomAD="170228" polyphen="2.2.2" regbuild="1.0" sift="sift5.2.2"
+##bcftools_concatCommand=concat --rm-dups all -a --threads 12 -O z -o /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/bigcs_giab.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr1.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr2.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr3.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr4.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr5.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr6.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr7.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr8.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr9.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr10.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr11.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr12.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr13.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr14.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr15.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr16.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr17.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr18.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr19.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr20.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr21.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chr22.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chrX.gl.vep.vcf.gz /WORK/gzfezx_shhli_3/Project/20191202_BIGCS/02.basic_analysis/03.genotype/output/VEP/chrY.gl.vep.vcf.gz; Date=Fri Jan 15 15:32:42 2021
+##bcftools_concatVersion=1.9+htslib-1.9
+##bcftools_normCommand=norm -d none bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.vcf.gz; Date=Thu Jan 28 14:32:00 2021
+##bcftools_normVersion=1.9+htslib-1.9
+##bcftools_viewCommand=view --trim-alt-alleles --exclude-uncalled -c 1 --samples-file ../bigcs.SampleQC.sample.list --threads 10 -O z -o bigcs.SampleQC.VA.VQSR.PASS.CGP.biallelic.EXHET.missingGQ.pl-pp.LDbasedrefinement.gl.VEP.vcf.gz t.vcf.gz; Date=Sat Jan 23 21:18:33 2021
+##bcftools_viewVersion=1.9+htslib-1.9
+##contig=<ID=chr1,length=248956422,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr2,length=242193529,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr3,length=198295559,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr4,length=190214555,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr5,length=181538259,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr6,length=170805979,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr7,length=159345973,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr8,length=145138636,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr9,length=138394717,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr10,length=133797422,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr11,length=135086622,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr12,length=133275309,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr13,length=114364328,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14,length=107043718,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr15,length=101991189,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr16,length=90338345,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr17,length=83257441,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr18,length=80373285,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr19,length=58617616,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr20,length=64444167,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr21,length=46709983,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22,length=50818468,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrX,length=156040895,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrY,length=57227415,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrM,length=16569,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270706v1_random,length=175055,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270707v1_random,length=32032,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270708v1_random,length=127682,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270709v1_random,length=66860,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270710v1_random,length=40176,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270711v1_random,length=42210,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270712v1_random,length=176043,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270713v1_random,length=40745,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr1_KI270714v1_random,length=41717,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr2_KI270715v1_random,length=161471,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr2_KI270716v1_random,length=153799,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr3_GL000221v1_random,length=155397,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr4_GL000008v2_random,length=209709,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr5_GL000208v1_random,length=92689,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr9_KI270717v1_random,length=40062,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr9_KI270718v1_random,length=38054,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr9_KI270719v1_random,length=176845,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr9_KI270720v1_random,length=39050,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr11_KI270721v1_random,length=100316,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_GL000009v2_random,length=201709,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_GL000225v1_random,length=211173,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_KI270722v1_random,length=194050,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_GL000194v1_random,length=191469,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_KI270723v1_random,length=38115,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_KI270724v1_random,length=39555,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_KI270725v1_random,length=172810,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr14_KI270726v1_random,length=43739,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr15_KI270727v1_random,length=448248,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr16_KI270728v1_random,length=1872759,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr17_GL000205v2_random,length=185591,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr17_KI270729v1_random,length=280839,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr17_KI270730v1_random,length=112551,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270731v1_random,length=150754,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270732v1_random,length=41543,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270733v1_random,length=179772,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270734v1_random,length=165050,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270735v1_random,length=42811,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270736v1_random,length=181920,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270737v1_random,length=103838,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270738v1_random,length=99375,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chr22_KI270739v1_random,length=73985,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrY_KI270740v1_random,length=37240,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270302v1,length=2274,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270304v1,length=2165,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270303v1,length=1942,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270305v1,length=1472,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270322v1,length=21476,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270320v1,length=4416,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270310v1,length=1201,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270316v1,length=1444,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270315v1,length=2276,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270312v1,length=998,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270311v1,length=12399,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270317v1,length=37690,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270412v1,length=1179,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270411v1,length=2646,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270414v1,length=2489,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270419v1,length=1029,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270418v1,length=2145,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270420v1,length=2321,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270424v1,length=2140,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270417v1,length=2043,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270422v1,length=1445,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270423v1,length=981,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270425v1,length=1884,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270429v1,length=1361,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270442v1,length=392061,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270466v1,length=1233,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270465v1,length=1774,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270467v1,length=3920,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270435v1,length=92983,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270438v1,length=112505,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270468v1,length=4055,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270510v1,length=2415,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270509v1,length=2318,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270518v1,length=2186,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270508v1,length=1951,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270516v1,length=1300,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270512v1,length=22689,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270519v1,length=138126,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270522v1,length=5674,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270511v1,length=8127,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270515v1,length=6361,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270507v1,length=5353,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270517v1,length=3253,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270529v1,length=1899,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270528v1,length=2983,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270530v1,length=2168,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270539v1,length=993,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270538v1,length=91309,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270544v1,length=1202,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270548v1,length=1599,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270583v1,length=1400,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270587v1,length=2969,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270580v1,length=1553,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270581v1,length=7046,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270579v1,length=31033,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270589v1,length=44474,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270590v1,length=4685,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270584v1,length=4513,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270582v1,length=6504,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270588v1,length=6158,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270593v1,length=3041,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270591v1,length=5796,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270330v1,length=1652,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270329v1,length=1040,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270334v1,length=1368,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270333v1,length=2699,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270335v1,length=1048,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270338v1,length=1428,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270340v1,length=1428,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270336v1,length=1026,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270337v1,length=1121,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270363v1,length=1803,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270364v1,length=2855,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270362v1,length=3530,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270366v1,length=8320,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270378v1,length=1048,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270379v1,length=1045,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270389v1,length=1298,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270390v1,length=2387,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270387v1,length=1537,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270395v1,length=1143,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270396v1,length=1880,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270388v1,length=1216,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270394v1,length=970,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270386v1,length=1788,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270391v1,length=1484,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270383v1,length=1750,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270393v1,length=1308,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270384v1,length=1658,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270392v1,length=971,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270381v1,length=1930,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270385v1,length=990,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270382v1,length=4215,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270376v1,length=1136,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270374v1,length=2656,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270372v1,length=1650,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270373v1,length=1451,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270375v1,length=2378,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270371v1,length=2805,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270448v1,length=7992,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270521v1,length=7642,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000195v1,length=182896,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000219v1,length=179198,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000220v1,length=161802,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000224v1,length=179693,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270741v1,length=157432,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000226v1,length=15008,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000213v1,length=164239,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270743v1,length=210658,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270744v1,length=168472,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270745v1,length=41891,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270746v1,length=66486,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270747v1,length=198735,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270748v1,length=93321,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270749v1,length=158759,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270750v1,length=148850,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270751v1,length=150742,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270752v1,length=27745,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270753v1,length=62944,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270754v1,length=40191,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270755v1,length=36723,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270756v1,length=79590,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270757v1,length=71251,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000214v1,length=137718,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_KI270742v1,length=186739,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000216v2,length=176608,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrUn_GL000218v1,length=161147,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##contig=<ID=chrEBV,length=171823,assembly=GCA_000001405.15_GRCh38_no_alt_analysis_set.fa>
+##filedate=20201214
+##reference=file:///WORK/gzfezx_shhli_3/BioDatahub/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa
+##source="beagle.jar (r1399)"
+##source=SelectVariants
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chr22	10515882	rs1490973086	G	A	.	PASS	AC=855;AF=0.105296;AN=8106;AR2=0.63;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1490973086||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.68
+chr22	10516264	.	TAC	T	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.78;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.78
+chr22	10516615	rs1228174166	TTTG	T	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.221;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1228174166||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.222
+chr22	10518420	rs1177693979	CA	C	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.547;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1177693979||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.607
+chr22	10519243	rs1186022611	A	AG	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.673;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||rs1186022611||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.707
+chr22	10519428	rs1361775216	C	T	.	PASS	AC=511;AF=0.062931;AN=8106;AR2=0.799;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1361775216||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.828
+chr22	10520657	rs1467462910	C	G	.	PASS	AC=108;AF=0.0133;AN=8106;AR2=0.654;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||rs1467462910||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.687
+chr22	10521776	.	A	AT	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.635;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1428961269||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.635
+chr22	10522996	.	G	A	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.96;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.96
+chr22	10525337	.	TTAAA	T	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.667;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.667
+chr22	10525863	rs1424443786	GCTTTTTGCGCCCCGCCGCGGCGA	G	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.579;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1424443786||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.579
+chr22	10526217	rs1248504347	A	G	.	PASS	AC=510;AF=0.062808;AN=8106;AR2=0.85;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||rs1248504347||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.876
+chr22	10526299	.	A	AT	.	PASS	AC=9;AF=0.001108;AN=8106;AR2=0.908;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1339098562||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.919
+chr22	10526331	rs1273457090	ACCGCCGCCGCGGGTTTTTTCCC	A	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.972;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1273457090||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.972
+chr22	10526929	rs1450244074	CTGCCCCCGCCGCCGAGGCTTTT	C	.	PASS	AC=7;AF=0.000862;AN=8106;AR2=0.28;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1450244074||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.315
+chr22	10527169	rs1298885914	TGCCGCCATAGCTTTTTACCCGC	T	.	PASS	AC=7;AF=0.000862;AN=8106;AR2=0.293;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1298885914||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.309
+chr22	10527258	rs1334404621	CTTTTTGCCCCCGCCGCGGA	C	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.002;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1334404621||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.02
+chr22	10527958	.	CT	C	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.008;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.023
+chr22	10531789	rs1216476262	G	GATGAA	.	PASS	AC=1593;AF=0.196182;AN=8106;AR2=0.607;CSQ=ATGAA|intergenic_variant|MODIFIER|||||||||||||||rs1216476262||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.674
+chr22	10531812	.	GATGAA	G	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.934;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.934
+chr22	10534499	rs1223945184	C	A	.	PASS	AC=3;AF=0.000369;AN=8106;AR2=0.792;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1223945184||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.792
+chr22	10534557	.	G	GT	.	PASS	AC=9;AF=0.001108;AN=8106;AR2=0.823;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1157249200||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.86
+chr22	10534560	rs1201333134	TTTTTG	T	.	PASS	AC=6;AF=0.000739;AN=8106;AR2=0.953;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1201333134||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.953
+chr22	10550966	rs1436460593	C	T	.	PASS	AC=423;AF=0.052094;AN=8106;AR2=0.834;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1436460593||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.862
+chr22	10551084	rs1403110882	GCA	G	.	PASS	AC=3;AF=0.000369;AN=8106;AR2=0.93;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1403110882||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.93
+chr22	10551121	rs1286184399	C	T	.	PASS	AC=341;AF=0.041995;AN=8106;AR2=0.809;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1286184399||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.841
+chr22	10551164	rs1252500398	A	C	.	PASS	AC=9;AF=0.001108;AN=8106;AR2=0.625;CSQ=C|intergenic_variant|MODIFIER|||||||||||||||rs1252500398||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.687
+chr22	10559647	rs1295749031	G	A	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.969;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1295749031||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.969
+chr22	10559649	rs1439398902	C	T	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.944;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1439398902||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.945
+chr22	10559676	rs1259742422	G	A	.	PASS	AC=173;AF=0.021305;AN=8106;AR2=0.864;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1259742422||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.898
+chr22	10559885	rs1407714268	C	T	.	PASS	AC=822;AF=0.101232;AN=8106;AR2=0.849;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1407714268||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.867
+chr22	10560625	rs1330790837	TTTC	T	.	PASS	AC=6;AF=0.000739;AN=8106;AR2=0.067;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1330790837||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.081
+chr22	10561490	.	AGG	A	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.182;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.203
+chr22	10562526	rs1243406316	TAG	T	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.542;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1243406316||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.602
+chr22	10562747	rs1263013203	AGTTTT	A	.	PASS	AC=101;AF=0.012562;AN=8106;AR2=0.65;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1263013203||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.685
+chr22	10562806	rs1445473902	C	T	.	PASS	AC=236;AF=0.029064;AN=8106;AR2=0.67;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1445473902||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.71
+chr22	10562888	rs1289381056	T	C	.	PASS	AC=927;AF=0.114286;AN=8106;AR2=0.785;CSQ=C|intergenic_variant|MODIFIER|||||||||||||||rs1289381056||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.814
+chr22	10565287	rs1482739948	T	C	.	PASS	AC=419;AF=0.051724;AN=8106;AR2=0.545;CSQ=C|intergenic_variant|MODIFIER|||||||||||||||rs1482739948||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.598
+chr22	10566898	rs1176749520	CGAGA	C	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.607;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1176749520||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.607
+chr22	10568148	.	A	AC	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.583;CSQ=C|intergenic_variant|MODIFIER|||||||||||||||||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.656
+chr22	10568421	rs1218811398	A	G	.	PASS	AC=24;AF=0.002956;AN=8106;AR2=0.788;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||rs1218811398||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.831
+chr22	10568422	rs1320562603	T	C	.	PASS	AC=10;AF=0.001232;AN=8106;AR2=0.747;CSQ=C|intergenic_variant|MODIFIER|||||||||||||||rs1320562603||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.797
+chr22	10568425	.	A	G	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.927;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.929
+chr22	10568436	rs1368991195	T	TA	.	PASS	AC=5;AF=0.000616;AN=8106;AR2=0.853;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1368991195||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.877
+chr22	10570294	rs1343403273	G	A	.	PASS	AC=289;AF=0.035591;AN=8106;AR2=0.727;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1343403273||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.766
+chr22	10570455	rs1243893653	C	T	.	PASS	AC=1727;AF=0.212931;AN=8106;AR2=0.5;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1243893653||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.582
+chr22	10571197	rs1453063163	T	G	.	PASS	AC=2;AF=0.000246;AN=8106;AR2=0.752;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||rs1453063163||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.757
+chr22	10571238	rs1375789375	C	T	.	PASS	AC=23;AF=0.002833;AN=8106;AR2=0.826;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1375789375||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.834
+chr22	10571239	rs1197893888	C	G	.	PASS	AC=23;AF=0.002833;AN=8106;AR2=0.826;CSQ=G|intergenic_variant|MODIFIER|||||||||||||||rs1197893888||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.834
+chr22	10571480	rs1449405968	C	A	.	PASS	AC=80;AF=0.009852;AN=8106;AR2=0.653;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1449405968||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.694
+chr22	10571526	rs1487211175	CG	C	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.818;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1487211175||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.818
+chr22	10571582	.	C	CCCG	.	PASS	AC=13;AF=0.001601;AN=8106;AR2=0.577;CSQ=CCG|intergenic_variant|MODIFIER|||||||||||||||rs1439376771||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.606
+chr22	10571588	rs1175827481	GCCGCCGCGACTTTTTGC	G	.	PASS	AC=5;AF=0.000616;AN=8106;AR2=0.57;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1175827481||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.594
+chr22	10571738	rs1568896584	CGCGGCTTTTTGCTCCCCCCCGCTCCGGTGTCGCTGTTATTTTGCCCGCT	C	.	PASS	AC=12;AF=0.001478;AN=8106;AR2=0.641;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.687
+chr22	10572185	rs1265676577	GC	G	.	PASS	AC=12;AF=0.001478;AN=8106;AR2=0.641;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1265676577||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.702
+chr22	10572216	rs1436492848	G	A	.	PASS	AC=12;AF=0.001478;AN=8106;AR2=0.775;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1436492848||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.812
+chr22	10573497	rs1252223090	G	C	.	PASS	AC=575;AF=0.070936;AN=8106;AR2=0.807;CSQ=C|regulatory_region_variant|MODIFIER|||RegulatoryFeature|ENSR00000300748|CTCF_binding_site||||||||||rs1252223090||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.839
+chr22	10577480	rs1448670975	T	C	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.586;CSQ=C|intergenic_variant|MODIFIER|||||||||||||||rs1448670975||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.586
+chr22	10577521	.	CAT	C	.	PASS	AC=10;AF=0.001232;AN=8106;AR2=0.652;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1441551384||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.698
+chr22	10577629	rs1349225949	T	TA	.	PASS	AC=267;AF=0.032882;AN=8106;AR2=0.808;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1349225949||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.836
+chr22	10577666	rs1491296197	CAT	C	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.847;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1491296197||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.847
+chr22	10577851	.	TA	T	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.697;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.697
+chr22	10580900	.	ATTC	A	.	PASS	AC=3;AF=0.000369;AN=8106;AR2=0.973;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.973
+chr22	10581005	rs1268262722	C	T	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.946;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1268262722||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.946
+chr22	10581404	rs1283129074	G	A	.	PASS	AC=487;AF=0.059975;AN=8106;AR2=0.907;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1283129074||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.922
+chr22	10581518	rs1318646482	T	A	.	PASS	AC=6;AF=0.000739;AN=8106;AR2=0.537;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1318646482||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.574
+chr22	10582927	rs1301410597	G	T	.	PASS	AC=3;AF=0.000369;AN=8106;AR2=0.969;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1301410597||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.969
+chr22	10585295	rs1217904605	T	TA	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.922;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1217904605||||insertion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.922
+chr22	10586832	rs1169204939	C	T	.	PASS	AC=3;AF=0.000369;AN=8106;AR2=0.818;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||rs1169204939||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.868
+chr22	10587411	.	G	T	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.793;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.793
+chr22	10587416	.	C	T	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.784;CSQ=T|intergenic_variant|MODIFIER|||||||||||||||||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.784
+chr22	10588234	.	T	A	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.909;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.909
+chr22	10588258	.	A	C	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.938;CSQ=C|intergenic_variant|MODIFIER|||||||||||||||||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.938
+chr22	10588274	.	AT	A	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.947;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.947
+chr22	10593165	rs1265801002	GT	G	.	PASS	AC=4;AF=0.000493;AN=8106;AR2=0.771;CSQ=-|intergenic_variant|MODIFIER|||||||||||||||rs1265801002||||deletion|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.771
+chr22	10595472	rs1264446065	C	A	.	PASS	AC=1;AF=0.000123;AN=8106;AR2=0.781;CSQ=A|intergenic_variant|MODIFIER|||||||||||||||rs1264446065||||SNV|||||||||||||||||||||||||||||||||||||||||||||||;DR2=0.781
