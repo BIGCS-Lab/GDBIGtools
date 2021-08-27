@@ -31,10 +31,7 @@ Install the released version by `pip` (Only support Python3 since v1.0.1):
 pip install GDBIGtools
 ```
 
-Setup
-------------
-
-Please enable your API access from Profile in [GDBIG browser](https://gdbig.bigcs.com.cn) before using **GDBIGtools**.
+Please enable your API access from Profile in [GDBIG browser](http://gdbig.bigcs.com.cn/api.html) before using **GDBIGtools**.
 
 Help
 ------------
