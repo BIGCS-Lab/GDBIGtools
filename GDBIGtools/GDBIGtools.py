@@ -136,7 +136,7 @@ def GDBIGtools():
 def login(api_key, api_secret, url):
     status_code, result = getVariant(api_key, api_secret, url)
     if status_code != 200:
-        sys.stderr.write('[Error] while obtaining your GDBIG API authentication server.\nYou may do not have the API access or the API is wrong.\n')
+        sys.stderr.write('[Error] while obtaining your GDBIG API authentication server. You may do not have the API access or the API is wrong.\n[Error] Please confirm your API information [http://gdbig.bigcs.com.cn/api.html]')
         return
     else:
         create_authentication(api_key, api_secret, url)
@@ -238,10 +238,10 @@ def annotate(input_vcf):
                     else:
                         list_info = GDBIG_variant[7].split(';') + in_fields[7].split(';')
                     for f in list_info:
-                        for n in f.split('=')[0]:
-                            if n not in info_set:
-                                new_info.append(f)
-                                info_set.add(n)
+                        n = f.split('=')[0]
+                        if n not in info_set:
+                            new_info.append(f)
+                            info_set.add(n)
                     info = ';'.join(new_info)
                     if len(in_fields) > 8:
                         sys.stdout.write('{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(chromosome, position, in_fields[2], ref, alt, in_fields[5], in_fields[6], info, '\t'.join(in_fields[8:])))

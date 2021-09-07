@@ -190,7 +190,7 @@ Then you will get 8 new fields with the information of GDBIG in VCF INFO:
 -   `GDBIG_AF_NorthwestChina`: Alternate Allele Frequencies from GDBIG in NorthwestChina region;
 -   `GDBIG_AF_NorthChina`: Alternate Allele Frequencies from GDBIG in NorthChina region.
 
-```
+```bash
 ##fileformat=VCFv4.2
 ##FILTER=<ID=PASS,Description="All filters passed">
 ##FORMAT=<ID=DS,Number=1,Type=Float,Description="estimated ALT dose [P(RA) + P(AA)]">
@@ -207,11 +207,12 @@ Then you will get 8 new fields with the information of GDBIG in VCF INFO:
 ##INFO=<ID=GDBIG_AF_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthwestChina region">
 ##INFO=<ID=GDBIG_AF_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthChina region">
 #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO
-chr22   10515882        rs1490973086    G       A       .       PASS    GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF=0.105296;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_EastChina=0.113487;GDBIG_AF_EastChina=0.113487;GDBIG_AF_SouthwestChina=0.078571;GDBIG_AF_NortheastChina=0.098837;AR2=0.63;AR2=0.63
-chr22   10516264        .       TAC     T       .       PASS    GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_SouthChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0.001645;GDBIG_AF_EastChina=0.001645;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;AR2=0.78;AR2=0.78
-chr22   10516615        rs1228174166    TTTG    T       .       PASS    GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;AR2=0.221;AR2=0.221
-chr22   10518420        rs1177693979    CA      C       .       PASS    GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF=0.000246;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;AR2=0.547;AR2=0.547
-
+chr22   10515882        rs1490973086    G       A       .       PASS    GDBIG_AF=0.105296;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_EastChina=0.113487;GDBIG_AF_SouthwestChina=0.078571;GDBIG_AF_NortheastChina=0.098837;GDBIG_AF_NorthwestChina=0.061644;GDBIG_AF_NorthChina=0.057377;AR2=0.63;DR2=0.68
+chr22   10516264        .       TAC     T       .       PASS    GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0.001645;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;GDBIG_AF_NorthwestChina=0;GDBIG_AF_NorthChina=0;AR2=0.78;DR2=0.78
+chr22   10516615        rs1228174166    TTTG    T       .       PASS    GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;GDBIG_AF_NorthwestChina=0;GDBIG_AF_NorthChina=0;AR2=0.221;DR2=0.222
+chr22   10518420        rs1177693979    CA      C       .       PASS    GDBIG_AF=0.000246;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;GDBIG_AF_NorthwestChina=0;GDBIG_AF_NorthChina=0;AR2=0.547;DR2=0.607
+chr22   10519243        rs1186022611    A       AG      .       PASS    GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0.000169;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;GDBIG_AF_NorthwestChina=0;GDBIG_AF_NorthChina=0;AR2=0.673;DR2=0.707
+chr22   10519428        rs1361775216    C       T       .       PASS    GDBIG_AF=0.062931;GDBIG_AF_SouthChina=0.062521;GDBIG_AF_CentralChina=0.082734;GDBIG_AF_EastChina=0.057566;GDBIG_AF_SouthwestChina=0.05;GDBIG_AF_NortheastChina=0.052326;GDBIG_AF_NorthwestChina=0.068493;GDBIG_AF_NorthChina=0.02459;AR2=0.799;DR2=0.828
 ```
 
 Citation
