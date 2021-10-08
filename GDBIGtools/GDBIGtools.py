@@ -24,7 +24,7 @@ GDBIG_DIR = '.gdbig'
 GDBIG_TOKENSTORE = 'authaccess.yaml'
 
 GDBIG_DATASET_VERSION = 'GDBIG_GRCh38_v1.0'
-GDBIG_API_VERSION = 'v1.0'
+GDBIG_API_VERSION = '1.0.9'
 
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
@@ -153,6 +153,11 @@ def logout():
     sys.stdout.write("Done.\nLogout successful.\n")
     return
 
+@click.command(context_settings=CONTEXT_SETTINGS, help='GDBIGtools version: %s'%GDBIG_API_VERSION)
+def version():
+    sys.stdout.write("\nGDBIGtools version: %s \n\n"%GDBIG_API_VERSION)
+    return
+
 @click.command(context_settings=CONTEXT_SETTINGS, help="Display API information for GDBIG.")
 def print_api():
     if not authaccess_exists():
@@ -255,6 +260,7 @@ GDBIGtools.add_command(logout)
 GDBIGtools.add_command(print_api)
 GDBIGtools.add_command(query)
 GDBIGtools.add_command(annotate)
+GDBIGtools.add_command(version)
 
 if __name__ == '__main__':
     GDBIGtools()
