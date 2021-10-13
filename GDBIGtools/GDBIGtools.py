@@ -24,7 +24,7 @@ GDBIG_DIR = '.gdbig'
 GDBIG_TOKENSTORE = 'authaccess.yaml'
 
 GDBIG_DATASET_VERSION = 'GDBIG_GRCh38_v1.0'
-GDBIG_API_VERSION = '1.0.9'
+GDBIG_API_VERSION = '1.1.0'
 
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
@@ -70,7 +70,7 @@ def read_authentication():
             return
         return tokenstore
 
-def getVariant(api_key, api_secret, url, search_key="rs1431837856"):
+def getVariant(api_key, api_secret, url, search_key="rs1801133"):
     h1 = hashlib.md5()
     h1.update((api_key+search_key+api_secret).encode(encoding="utf-8"))
     req_hash = h1.hexdigest()

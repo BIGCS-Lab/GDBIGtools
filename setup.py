@@ -23,7 +23,7 @@ meta = Namespace(
     __URL__="https://github.com/aiyacharley/GDBIGtools",
     __LICENSE__="BSD (3-clause)",
     __DOWNLOAD_URL__="https://github.com/aiyacharley/GDBIGtools",
-    __VERSION__="1.0.9",
+    __VERSION__="1.1.0",
 )
 
 if __name__ == "__main__":
