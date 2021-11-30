@@ -1,0 +1,3 @@
+[console_scripts]
+GDBIGtools = GDBIGtools.GDBIGtools:GDBIGtools
+
