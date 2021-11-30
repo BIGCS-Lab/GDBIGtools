@@ -48,7 +48,7 @@ Commands:
   logout     Logout GDBIG.
   print-api  Display API information for GDBIG.
   query      Query variants from GDBIG database.
-  version    GDBIGtools version: 1.1.1
+  version    GDBIGtools version: 1.1.2
 ```
 
 Login

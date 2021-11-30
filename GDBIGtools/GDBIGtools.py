@@ -24,7 +24,7 @@ GDBIG_DIR = '.gdbig'
 GDBIG_TOKENSTORE = 'authaccess.yaml'
 
 GDBIG_DATASET_VERSION = 'GDBIG_GRCh38_v1.0'
-GDBIG_API_VERSION = '1.1.1'
+GDBIG_API_VERSION = '1.1.2'
 
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
@@ -151,8 +151,8 @@ def json2vcf(res, stdout = True):
 
         OneK_Genomes = w['OneK_Genomes'] if w['OneK_Genomes'] else {'AF':'Na','AFR_AF':'Na','AMR_AF':'Na','EAS_AF':'Na','EUR_AF':'Na','SAS_AF':'Na'}
         vcf_line5 = 'AF_1KGP={};AF_1KGP_AFR={};AF_1KGP_AMR={};AF_1KGP_EAS={};AF_1KGP_EUR={};AF_1KGP_SAS={}'.format(OneK_Genomes['AF'],OneK_Genomes['AFR_AF'],OneK_Genomes['AMR_AF'],OneK_Genomes['EAS_AF'],OneK_Genomes['EUR_AF'],OneK_Genomes['SAS_AF'])
+        vcf_line.append("%s;%s;%s;%s;%s"%(vcf_line1,vcf_line2,vcf_line3,vcf_line4,vcf_line5))
         if stdout:
-            vcf_line.append("%s;%s;%s;%s;%s"%(vcf_line1,vcf_line2,vcf_line3,vcf_line4,vcf_line5))
             sys.stdout.write('%s\n' % '\t'.join(map(str, vcf_line)))
         result.extend(vcf_line)
     return(result)
@@ -165,7 +165,8 @@ def query_one(api_info, search_identifier, stdout = True):
     for newid in IDlist:
         res_status, res = getVariant(api_info['api_key'], api_info['api_secret'], api_info['url'], search_key = newid)
         reslist.append(res)
-    return(json2vcf(reslist, stdout))
+    AFlist = json2vcf(reslist, stdout)
+    return(AFlist)
 def query_file(api_info, list_file):
     with gzip.open(list_file) if list_file.endswith('.gz') else open(list_file,'r') as P:
         for line in P:
@@ -282,7 +283,7 @@ def annotate(input_vcf):
                 if in_line.startswith('##'):
                     sys.stdout.write('{}\n'.format(in_line.rstrip()))
                 elif in_line.startswith('#CHROM'):
-                    sys.stdout.write('\n'.join(VCF_HEADER[2:10])+'\n')
+                    sys.stdout.write('\n'.join(VCF_HEADER[2:34])+'\n')
                     sys.stdout.write('{}\n'.format(in_line.rstrip()))
                 continue
             in_fields = in_line.rstrip().split()
@@ -291,18 +292,19 @@ def annotate(input_vcf):
             ref = in_fields[3].upper()
             alt = in_fields[4].upper()
 
-            GDBIG_variant_list = query_one(api_info, chromosome+':'+str(position), stdout = False)
+            GDBIG_variant_list = query_one(api_info, chromosome+':'+str(position)+'-'+ref+'-'+alt, stdout = False)
             if len(GDBIG_variant_list)==0:
                 # not variants found in GDBIG
                 sys.stdout.write('{}\n'.format(in_line.strip()))
             else:
-                GDBIG_variant = GDBIG_variant_list[0]
+                GDBIG_variant = GDBIG_variant_list
                 if GDBIG_variant[4].upper() in alt.split(',') and GDBIG_variant[3].upper() == ref:
                     new_info, info_set = [], set()
                     if in_fields[7] == ".":
                         list_info = GDBIG_variant[7].split(';')
                     else:
                         list_info = GDBIG_variant[7].split(';') + in_fields[7].split(';')
+                    print(list_info)
                     for f in list_info:
                         n = f.split('=')[0]
                         if n not in info_set:
