@@ -79,7 +79,8 @@ def create_authentication(api_key, api_secret, url):
             "url": url,
             "api_key": api_key,
             "api_secret": api_secret,
-            "version": GDBIG_DATASET_VERSION
+            "Database version": GDBIG_DATASET_VERSION,
+            "API version": GDBIG_API_VERSION
         }
         yaml.dump(token_obj, tokenstore)
 
@@ -197,7 +198,7 @@ def GDBIGtools():
 def login(api_key, api_secret, url):
     status_code, result = getVariant(api_key, api_secret, url)
     if status_code != 200:
-        sys.stderr.write('[Error] while obtaining your GDBIG API authentication server. You may do not have the API access or the API is wrong.\n[Error] Please confirm your API information [http://gdbig.bigcs.com.cn/api.html]')
+        sys.stderr.write('[Error] while obtaining your GDBIG API authentication server. You may do not have the API access or the API is wrong.\n[Error] Please confirm your API information [http://gdbig.bigcs.com.cn/api.html]\n')
         return
     else:
         create_authentication(api_key, api_secret, url)
@@ -231,7 +232,8 @@ def print_api():
         sys.stdout.write("API Key: %s\n"%api_info['api_key'])
         sys.stdout.write("Secret Key: %s\n"%api_info['api_secret'])
         sys.stdout.write("url: %s\n"%api_info['url'])
-        sys.stdout.write("version: %s\n"%api_info['version'])
+        sys.stdout.write("Database version: %s\n"%api_info['Database version'])
+        sys.stdout.write("API version: %s\n"%api_info['API version'])
     else:
         sys.stderr.write("[Error] API status: Invalid\n")
 
