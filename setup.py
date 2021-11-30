@@ -1,7 +1,7 @@
 """
 Setup file and install script for GDBIGtools.
 
-Version 1.1.2 (Nov 30, 2021)
+Version 1.1.3 (Nov 30, 2021)
 Copyright (c) 2021 Chengrui Wang
 """
 import os
@@ -23,7 +23,7 @@ meta = Namespace(
     __URL__="https://github.com/aiyacharley/GDBIGtools",
     __LICENSE__="BSD (3-clause)",
     __DOWNLOAD_URL__="https://github.com/aiyacharley/GDBIGtools",
-    __VERSION__="1.1.2",
+    __VERSION__="1.1.3",
 )
 
 if __name__ == "__main__":
