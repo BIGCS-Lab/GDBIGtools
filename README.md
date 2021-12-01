@@ -27,7 +27,7 @@ Up to now, the following databases are integrated:
 Preparation
 ------------
 
-#### Installation
+#### Installation ####
 Install the released version by `pip` (Only support Python3.6+):
 
 ```bash
@@ -36,7 +36,7 @@ pip install GDBIGtools
 pip install --upgrade GDBIGtools
 ```
 
-#### Help
+#### Help ####
 type `GDBIGtools -h/--help` for detail.
 ```
 Usage: GDBIGtools [OPTIONS] COMMAND [ARGS]...
@@ -53,7 +53,7 @@ Commands:
   version    GDBIGtools version: 1.1.6
 ```
 
-#### Login
+#### Login ####
 Login with `GDBIGtools` by using GDBIG API access key, which could be found from [**<API ACCESS\>**](http://gdbig.bigcs.com.cn/api.html) if you have apply for it.
 
 [![GDBIG_genomics_api](assets/figures/GDBIG_genomics_api.png)](assets/figures/GDBIG_genomics_api.png)
@@ -68,7 +68,7 @@ GDBIGtools login -k <API Key> -s <Secret Key>
 
 If everything goes smoothly, means you can use GDBIG as one of your varaints database in command line mode.
 
-#### Logout
+#### Logout ####
 
 Logout `GDBIGtools` by simply run the command below:
 
@@ -81,7 +81,7 @@ Quick start
 ------------
 **\*Note**: Please enable your API access in [**GDBIG API**](http://gdbig.bigcs.com.cn/api.html) before using **GDBIGtools**.
 
-#### Query a single variant
+#### Query a single variant ####
 
 Variants could be retrieved from GDBIG by using `query`.
 
@@ -181,7 +181,7 @@ chr22 10580900  . ATTC  A . PASS  AF_GDBIG=0.000369;AF_GDBIG_SouthChina=0.000506
 chr22 10581005  rs1268262722  C T . PASS  AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0.003571;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=9.9e-05;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=2.39067e-05;AF_gnomAD_afr=0;AF_gnomAD_ami=0;AF_gnomAD_asj=0;AF_gnomAD_eas=0;AF_gnomAD_fin=0;AF_gnomAD_amr=0;AF_gnomAD_nfe=5.56091e-05;AF_gnomAD_sas=0;AF_gnomAD_oth=0;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
 ```
 
-#### Quering for input-file
+#### Quering for input-file ####
 
 A list of variants could be retrieved from GDBIG by using the parameters of `-l` when apply by `query`.
 
@@ -213,7 +213,7 @@ Actrually you can use `-s` and `-l` simultaneously if you want.
 GDBIGtools query -s 22:46616520 -l positions.list > result.vcf
 ```
 
-#### Annotate your VCF files
+#### Annotate your VCF files ####
 
 Annotate your VCF file with GDBIG by using `GDBIGtools annotate` command.
 
