@@ -1,7 +1,7 @@
 """
 Setup file and install script for GDBIGtools.
 
-Version 1.1.5 (Nov 30, 2021)
+Version 1.1.6 (Dec 1, 2021)
 Copyright (c) 2021 Chengrui Wang
 """
 import os
@@ -23,7 +23,7 @@ meta = Namespace(
     __URL__="https://github.com/aiyacharley/GDBIGtools",
     __LICENSE__="BSD (3-clause)",
     __DOWNLOAD_URL__="https://github.com/aiyacharley/GDBIGtools",
-    __VERSION__="1.1.5",
+    __VERSION__="1.1.6",
 )
 
 if __name__ == "__main__":
@@ -60,6 +60,7 @@ if __name__ == "__main__":
               "Programming Language :: Python :: 3.6",
               "Programming Language :: Python :: 3.7",
               "Programming Language :: Python :: 3.8",
+              "Programming Language :: Python :: 3.9",
               "License :: OSI Approved :: BSD License",
               "Topic :: Scientific/Engineering :: Bio-Informatics",
               "Operating System :: POSIX",

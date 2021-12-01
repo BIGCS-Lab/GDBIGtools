@@ -51,7 +51,7 @@ Commands:
   logout     Logout GDBIG.
   print-api  Display API information for GDBIG.
   query      Query variants from GDBIG database.
-  version    GDBIGtools version: 1.1.5
+  version    GDBIGtools version: 1.1.6
 ```
 
 #### Login
@@ -172,9 +172,9 @@ And you will get query result looks like below:
 ##INFO=<ID=AF_1KGP,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes database">
 ##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies from African population in 1000 Genomes database">
 ##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies from Admixed American population in 1000 Genomes database">
-##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from East Asian population 1000 Genomes database">
-##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in from European population 1000 Genomes database">
-##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from South Asian population 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies from East Asian population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies from European population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies from South Asian population in 1000 Genomes database">
 ##reference=file:/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa
 #CHROM  POS ID  REF ALT QUAL  FILTER  INFO
 chr22 10577666  rs1491296197  CAT C . PASS  AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0.000169;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=0.000605;AF_NyuWa=NA;AF_WBBC=0.00033415;AF_WBBC_North=0.00037092;AF_WBBC_Central=0;AF_WBBC_South=0.00037092;AF_WBBC_Lingnan=0;AF_gnomAD=0.000224749;AF_gnomAD_afr=9.27558e-05;AF_gnomAD_ami=0;AF_gnomAD_asj=0;AF_gnomAD_eas=0.00037679;AF_gnomAD_fin=0;AF_gnomAD_amr=0.000986193;AF_gnomAD_nfe=0.000206587;AF_gnomAD_sas=0;AF_gnomAD_oth=0;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
@@ -202,7 +202,7 @@ Format for [positions.list](tests/positions.list), could be a mixture of
 rs117518546
 chr1:11795125
 ENST00000269305
-MTHFR
+MTHFR  # fetch the best transcript annotaion results
 
 #CHROM	POS	[POS_END]
 chr22	17662883
@@ -265,9 +265,9 @@ GDBIGtools annotate -i GDBIG.test.vcf | bgzip > output.GDBIG.test.vcf.gz
 ##INFO=<ID=AF_1KGP,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes database">
 ##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies from African population in 1000 Genomes database">
 ##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies from Admixed American population in 1000 Genomes database">
-##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from East Asian population 1000 Genomes database">
-##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in from European population 1000 Genomes database">
-##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from South Asian population 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies from East Asian population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies from European population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies from South Asian population in 1000 Genomes database">
 #CHROM  POS ID  REF ALT QUAL  FILTER  INFO
 chr22 10515882  rs1490973086  G A . PASS  AR2=0.63;DR2=0.68;AF_GDBIG=0.105296;AF_GDBIG_SouthChina=0.106336;AF_GDBIG_CentralChina=0.116307;AF_GDBIG_EastChina=0.113487;AF_GDBIG_SouthwestChina=0.078571;AF_GDBIG_NortheastChina=0.098837;AF_GDBIG_NorthwestChina=0.061644;AF_GDBIG_NorthChina=0.057377;AF_CMDB=NA;AF_ChinaMAP=NA;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=0.0918221;AF_gnomAD_afr=0.0347594;AF_gnomAD_ami=0.123162;AF_gnomAD_asj=0.196657;AF_gnomAD_eas=0.261649;AF_gnomAD_fin=0.171307;AF_gnomAD_amr=0.0983247;AF_gnomAD_nfe=0.10664;AF_gnomAD_sas=0.20235;AF_gnomAD_oth=0.11147;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
 chr22 10516264  . TAC T . PASS  AR2=0.78;DR2=0.78;AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0.001645;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=NA;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=NA;AF_gnomAD_afr=NA;AF_gnomAD_ami=NA;AF_gnomAD_asj=NA;AF_gnomAD_eas=NA;AF_gnomAD_fin=NA;AF_gnomAD_amr=NA;AF_gnomAD_nfe=NA;AF_gnomAD_sas=NA;AF_gnomAD_oth=NA;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA

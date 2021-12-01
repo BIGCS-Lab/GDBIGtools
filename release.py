@@ -2,7 +2,7 @@
 Release and publish GDBIGtools to PyPI.
 
 Author: Chengrui Wang
-Date: 2021-11-30
+Date: 2021-12-01
 """
 from importlib import util
 from subprocess import call
