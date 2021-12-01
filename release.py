@@ -4,11 +4,11 @@ Release and publish GDBIGtools to PyPI.
 Author: Chengrui Wang
 Date: 2021-11-30
 """
-import importlib
+from importlib import util
 from subprocess import call
 
-spec = importlib.util.spec_from_file_location("_", "./setup.py")
-module = importlib.util.module_from_spec(spec)
+spec = util.spec_from_file_location("_", "./setup.py")
+module = util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 #call(["pandoc", "--from=markdown", "--to=rst", "-o", "README.rst", "README.md"])
