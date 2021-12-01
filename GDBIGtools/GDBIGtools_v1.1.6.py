@@ -2,7 +2,7 @@
 A command line tools for GDBIG variants browser
 
 Author: Chengrui Wang
-Date: 2021-11-30
+Date: 2021-12-01
 
 """
 import os
@@ -24,7 +24,7 @@ GDBIG_DIR = '.gdbig'
 GDBIG_TOKENSTORE = 'authaccess.yaml'
 
 GDBIG_DATASET_VERSION = 'GDBIG_GRCh38_v1.0'
-GDBIG_API_VERSION = '1.1.4'
+GDBIG_API_VERSION = '1.1.6'
 
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
@@ -129,7 +129,7 @@ def getVariant(api_key, api_secret, url, search_key="rs1801133"):
             return(r.status_code, res)
         else:
             if res['Data']==None:
-                sys.stderr.write('[Error] Your search identifier: [%s]. Query region is too large (at most 100kb) or position format is error (e.g. chr:[integer] or chr:[smaller integer]-[larger integer]).'%search_key)
+                sys.stderr.write('[Error] Your search identifier: [%s]. Query region is too large (at most 100kb) or position format is error (e.g. chr:[integer] or chr:[smaller integer]-[larger integer]).\n'%search_key)
                 sys.exit()
             else:
                 return(r.status_code, res)

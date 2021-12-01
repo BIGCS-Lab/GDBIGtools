@@ -2,7 +2,7 @@
 A command line tools for GDBIG variants browser
 
 Author: Chengrui Wang
-Date: 2021-11-30
+Date: 2021-12-01
 
 """
 import os
@@ -24,7 +24,7 @@ GDBIG_DIR = '.gdbig'
 GDBIG_TOKENSTORE = 'authaccess.yaml'
 
 GDBIG_DATASET_VERSION = 'GDBIG_GRCh38_v1.0'
-GDBIG_API_VERSION = '1.1.4'
+GDBIG_API_VERSION = '1.1.6'
 
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
@@ -58,9 +58,9 @@ VCF_HEADER = [
     '##INFO=<ID=AF_1KGP,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes database">',
     '##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies from African population in 1000 Genomes database">',
     '##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies from Admixed American population in 1000 Genomes database">',
-    '##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from East Asian population 1000 Genomes database">',
-    '##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in from European population 1000 Genomes database">',
-    '##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from South Asian population 1000 Genomes database">',
+    '##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies from East Asian population in 1000 Genomes database">',
+    '##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies from European population in 1000 Genomes database">',
+    '##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies from South Asian population in 1000 Genomes database">',
     '##reference=file:/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa',
     '#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO'
 ]
@@ -129,7 +129,7 @@ def getVariant(api_key, api_secret, url, search_key="rs1801133"):
             return(r.status_code, res)
         else:
             if res['Data']==None:
-                sys.stderr.write('[Error] Your search identifier: [%s]. Query region is too large (at most 100kb) or position format is error (e.g. chr:[integer] or chr:[smaller integer]-[larger integer]).'%search_key)
+                sys.stderr.write('[Error] Your search identifier: [%s]. Query region is too large (at most 100kb) or position format is error (e.g. chr:[integer] or chr:[smaller integer]-[larger integer]).\n'%search_key)
                 sys.exit()
             else:
                 return(r.status_code, res)
@@ -202,7 +202,7 @@ def GDBIGtools():
 def login(api_key, api_secret, url):
     status_code, result = getVariant(api_key, api_secret, url)
     if status_code != 200:
-        sys.stderr.write('[Error] while obtaining your GDBIG API authentication server. You may do not have the API access or the API is wrong.\n[Error] Please confirm your API information [http://gdbig.bigcs.com.cn/api.html]\n')
+        sys.stderr.write('[Error] API access or the API is wrong !!!\n[Error] Please confirm your API information [http://gdbig.bigcs.com.cn/api.html]\n')
         return
     else:
         create_authentication(api_key, api_secret, url)
