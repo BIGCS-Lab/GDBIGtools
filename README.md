@@ -105,79 +105,82 @@ GDBIGtools query -s MTHFR
 It\'ll take about 1 minute to complete about 2,000 variants\' sites. 
 Then you will get 32 new fields with the information of GDBIG in VCF INFO column:
 
--   `GDBIG_AF`: Alternate Allele Frequencies in GDBIG;
--   `GDBIG_AF_SouthChina`: Alternate Allele Frequencies from GDBIG in SouthChina region;
--   `GDBIG_AF_CentralChina`: Alternate Allele Frequencies from GDBIG in CentralChina region;
--   `GDBIG_AF_EastChina`: Alternate Allele Frequencies from GDBIG in EastChina region.
--   `GDBIG_AF_SouthwestChina`: Alternate Allele Frequencies from GDBIG in SouthwestChina region;
--   `GDBIG_AF_NortheastChina`: Alternate Allele Frequencies from GDBIG in NortheastChina region;
--   `GDBIG_AF_NorthwestChina`: Alternate Allele Frequencies from GDBIG in NorthwestChina region;
--   `GDBIG_AF_NorthChina`: Alternate Allele Frequencies from GDBIG in NorthChina region;
+-   `AF_GDBIG`: Alternate Allele Frequencies in GDBIG;
+-   `AF_GDBIG_SouthChina`: Alternate Allele Frequencies from SouthChina region in GDBIG;
+-   `AF_GDBIG_CentralChina`: Alternate Allele Frequencies from CentralChina region in GDBIG;
+-   `AF_GDBIG_EastChina`: Alternate Allele Frequencies from EastChina region in GDBIG.
+-   `AF_GDBIG_SouthwestChina`: Alternate Allele Frequencies from SouthwestChina region in GDBIG;
+-   `AF_GDBIG_NortheastChina`: Alternate Allele Frequencies from NortheastChina region in GDBIG;
+-   `AF_GDBIG_NorthwestChina`: Alternate Allele Frequencies from NorthwestChina region in GDBIG;
+-   `AF_GDBIG_NorthChina`: Alternate Allele Frequencies from NorthChina region in GDBIG;
 -   `AF_CMDB`: Alternate Allele Frequencies in CMDB database;
 -   `AF_ChinaMAP`: Alternate Allele Frequencies in ChinaMAP database;
 -   `AF_NyuWa`: Alternate Allele Frequencies in NyuWa(NCVD) database;
 -   `AF_WBBC`: Alternate Allele Frequencies in WBBC database;
--   `AF_WBBC_North`: Alternate Allele Frequencies in North region of WBBC database;
--   `AF_WBBC_Central`: Alternate Allele Frequencies in Central region of WBBC database;
--   `AF_WBBC_South`: Alternate Allele Frequencies in South region of WBBC database;
--   `AF_WBBC_Lingnan`: Alternate Allele Frequencies in Lingnan region of WBBC database;
+-   `AF_WBBC_North`: Alternate Allele Frequencies from North region in WBBC database;
+-   `AF_WBBC_Central`: Alternate Allele Frequencies from Central region in WBBC database;
+-   `AF_WBBC_South`: Alternate Allele Frequencies from South region in WBBC database;
+-   `AF_WBBC_Lingnan`: Alternate Allele Frequencies from Lingnan region in WBBC database;
 -   `AF_gnomAD`: Alternate Allele Frequencies in gnomAD database;
--   `AF_gnomAD_afr`: Alternate Allele Frequencies in gnomAD_afr database;
--   `AF_gnomAD_ami`: Alternate Allele Frequencies in gnomAD_ami database;
--   `AF_gnomAD_asj`: Alternate Allele Frequencies in gnomAD_asj database;
--   `AF_gnomAD_eas`: Alternate Allele Frequencies in gnomAD_eas database;
--   `AF_gnomAD_fin`: Alternate Allele Frequencies in gnomAD_fin database;
--   `AF_gnomAD_amr`: Alternate Allele Frequencies in gnomAD_amr database;
--   `AF_gnomAD_nfe`: Alternate Allele Frequencies in gnomAD_nfe database;
--   `AF_gnomAD_sas`: Alternate Allele Frequencies in gnomAD_sas database;
--   `AF_gnomAD_oth`: Alternate Allele Frequencies in gnomAD_oth database;
+-   `AF_gnomAD_afr`: Alternate Allele Frequencies from African-American/African population in gnomAD database;
+-   `AF_gnomAD_ami`: Alternate Allele Frequencies from Amish population in gnomAD database;
+-   `AF_gnomAD_asj`: Alternate Allele Frequencies from Ashkenazi Jewish population in gnomAD database;
+-   `AF_gnomAD_eas`: Alternate Allele Frequencies from East Asian population in gnomAD database;
+-   `AF_gnomAD_fin`: Alternate Allele Frequencies from Finnish population in gnomAD database;
+-   `AF_gnomAD_amr`: Alternate Allele Frequencies from Latino population in gnomAD database;
+-   `AF_gnomAD_nfe`: Alternate Allele Frequencies from Non-Finnish European population in gnomAD database;
+-   `AF_gnomAD_sas`: Alternate Allele Frequencies from South Asian population in gnomAD database;
+-   `AF_gnomAD_oth`: Alternate Allele Frequencies from Other population in gnomAD database;
 -   `AF_1KGP`: Alternate Allele Frequencies in 1000 Genomes database;
--   `AF_1KGP_AFR`: Alternate Allele Frequencies in 1000 Genomes AFR database;
--   `AF_1KGP_AMR`: Alternate Allele Frequencies in 1000 Genomes AMR database;
--   `AF_1KGP_EAS`: Alternate Allele Frequencies in 1000 Genomes EAS database;
--   `AF_1KGP_EUR`: Alternate Allele Frequencies in 1000 Genomes EUR database;
--   `AF_1KGP_SAS`: Alternate Allele Frequencies in 1000 Genomes SAS database;
+-   `AF_1KGP_AFR`: Alternate Allele Frequencies from African population in 1000 Genomes database;
+-   `AF_1KGP_AMR`: Alternate Allele Frequencies from Admixed American population in 1000 Genomes database;
+-   `AF_1KGP_EAS`: Alternate Allele Frequencies from East Asian population in 1000 Genomes database;
+-   `AF_1KGP_EUR`: Alternate Allele Frequencies from European population in 1000 Genomes database;
+-   `AF_1KGP_SAS`: Alternate Allele Frequencies from South Asian population in 1000 Genomes database;
 
 And you will get query result looks like below:
 
 ```bash
 ##fileformat=VCFv4.2
 ##FILTER=<ID=PASS,Description="All filters passed">
-##INFO=<ID=GDBIG_AF,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0">
-##INFO=<ID=GDBIG_AF_SouthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in SouthChina region">
-##INFO=<ID=GDBIG_AF_CentralChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in CentralChina region">
-##INFO=<ID=GDBIG_AF_EastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in EastChina region">
-##INFO=<ID=GDBIG_AF_SouthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in SouthwestChina region">
-##INFO=<ID=GDBIG_AF_NortheastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NortheastChina region">
-##INFO=<ID=GDBIG_AF_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthwestChina region">
-##INFO=<ID=GDBIG_AF_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthChina region">
+##INFO=<ID=AF_GDBIG,Number=A,Type=Float,Description="Alternate Allele Frequencies in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_SouthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from SouthChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_CentralChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from CentralChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_EastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from EastChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_SouthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from SouthwestChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_NortheastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NortheastChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NorthwestChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NorthChina region in GDBIG_GRCh38_v1.0">
 ##INFO=<ID=AF_CMDB,Number=A,Type=Float,Description="Alternate Allele Frequencies in CMDB database">
 ##INFO=<ID=AF_ChinaMAP,Number=A,Type=Float,Description="Alternate Allele Frequencies in ChinaMAP database">
 ##INFO=<ID=AF_NyuWa,Number=A,Type=Float,Description="Alternate Allele Frequencies in NyuWa(NCVD) database">
 ##INFO=<ID=AF_WBBC,Number=A,Type=Float,Description="Alternate Allele Frequencies in WBBC database">
-##INFO=<ID=AF_WBBC_North,Number=A,Type=Float,Description="Alternate Allele Frequencies in North region of WBBC database">
-##INFO=<ID=AF_WBBC_Central,Number=A,Type=Float,Description="Alternate Allele Frequencies in Central region of WBBC database">
-##INFO=<ID=AF_WBBC_South,Number=A,Type=Float,Description="Alternate Allele Frequencies in South region of WBBC database">
-##INFO=<ID=AF_WBBC_Lingnan,Number=A,Type=Float,Description="Alternate Allele Frequencies in Lingnan region of WBBC database">
+##INFO=<ID=AF_WBBC_North,Number=A,Type=Float,Description="Alternate Allele Frequencies from North region in WBBC database">
+##INFO=<ID=AF_WBBC_Central,Number=A,Type=Float,Description="Alternate Allele Frequencies from Central region in WBBC database">
+##INFO=<ID=AF_WBBC_South,Number=A,Type=Float,Description="Alternate Allele Frequencies from South region in WBBC database">
+##INFO=<ID=AF_WBBC_Lingnan,Number=A,Type=Float,Description="Alternate Allele Frequencies from Lingnan region in WBBC database">
 ##INFO=<ID=AF_gnomAD,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD database">
-##INFO=<ID=AF_gnomAD_afr,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_afr database">
-##INFO=<ID=AF_gnomAD_ami,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_ami database">
-##INFO=<ID=AF_gnomAD_asj,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_asj database">
-##INFO=<ID=AF_gnomAD_eas,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_eas database">
-##INFO=<ID=AF_gnomAD_fin,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_fin database">
-##INFO=<ID=AF_gnomAD_amr,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_amr database">
-##INFO=<ID=AF_gnomAD_nfe,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_nfe database">
-##INFO=<ID=AF_gnomAD_sas,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_sas database">
-##INFO=<ID=AF_gnomAD_oth,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_oth database">
+##INFO=<ID=AF_gnomAD_afr,Number=A,Type=Float,Description="Alternate Allele Frequencies from African-American/African population in gnomAD database">
+##INFO=<ID=AF_gnomAD_ami,Number=A,Type=Float,Description="Alternate Allele Frequencies from Amish population in gnomAD database">
+##INFO=<ID=AF_gnomAD_asj,Number=A,Type=Float,Description="Alternate Allele Frequencies from Ashkenazi Jewish population in gnomAD database">
+##INFO=<ID=AF_gnomAD_eas,Number=A,Type=Float,Description="Alternate Allele Frequencies from East Asian population in gnomAD database">
+##INFO=<ID=AF_gnomAD_fin,Number=A,Type=Float,Description="Alternate Allele Frequencies from Finnish population in gnomAD database">
+##INFO=<ID=AF_gnomAD_amr,Number=A,Type=Float,Description="Alternate Allele Frequencies from Latino population in gnomAD database">
+##INFO=<ID=AF_gnomAD_nfe,Number=A,Type=Float,Description="Alternate Allele Frequencies from Non-Finnish European population in gnomAD database">
+##INFO=<ID=AF_gnomAD_sas,Number=A,Type=Float,Description="Alternate Allele Frequencies from South Asian population in gnomAD database">
+##INFO=<ID=AF_gnomAD_oth,Number=A,Type=Float,Description="Alternate Allele Frequencies from Other population in gnomAD database">
 ##INFO=<ID=AF_1KGP,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes database">
-##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes AFR database">
-##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes AMR database">
-##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes EAS database">
-##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes EUR database">
-##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes SAS database">
+##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies from African population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies from Admixed American population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from East Asian population 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in from European population 1000 Genomes database">
+##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from South Asian population 1000 Genomes database">
 ##reference=file:/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa
 #CHROM  POS ID  REF ALT QUAL  FILTER  INFO
-chr7  24926827  rs123 C A . PASS  GDBIG_AF=0.898399;GDBIG_AF_SouthChina=0.899225;GDBIG_AF_CentralChina=0.894484;GDBIG_AF_EastChina=0.919408;GDBIG_AF_SouthwestChina=0.914286;GDBIG_AF_NortheastChina=0.883721;GDBIG_AF_NorthwestChina=0.835616;GDBIG_AF_NorthChina=0.852459;AF_CMDB=0.872917;AF_ChinaMAP=0.901964;AF_NyuWa=0.896132;AF_WBBC=0.904878592;AF_WBBC_North=0.90578635;AF_WBBC_Central=0.94;AF_WBBC_South=0.90578635;AF_WBBC_Lingnan=0.96031746;AF_gnomAD=0.579731;AF_gnomAD_afr=0.702737;AF_gnomAD_ami=0.57461;AF_gnomAD_asj=0.550572;AF_gnomAD_eas=0.910955;AF_gnomAD_fin=0.513438;AF_gnomAD_amr=0.586364;AF_gnomAD_nfe=0.489122;AF_gnomAD_sas=0.710994;AF_gnomAD_oth=0.55948;AF_1KGP=0.707867;AF_1KGP_AFR=0.7269;AF_1KGP_AMR=0.6383;AF_1KGP_EAS=0.9038;AF_1KGP_EUR=0.5119;AF_1KGP_SAS=0.7311
+chr22 10577666  rs1491296197  CAT C . PASS  AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0.000169;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=0.000605;AF_NyuWa=NA;AF_WBBC=0.00033415;AF_WBBC_North=0.00037092;AF_WBBC_Central=0;AF_WBBC_South=0.00037092;AF_WBBC_Lingnan=0;AF_gnomAD=0.000224749;AF_gnomAD_afr=9.27558e-05;AF_gnomAD_ami=0;AF_gnomAD_asj=0;AF_gnomAD_eas=0.00037679;AF_gnomAD_fin=0;AF_gnomAD_amr=0.000986193;AF_gnomAD_nfe=0.000206587;AF_gnomAD_sas=0;AF_gnomAD_oth=0;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
+chr22 10577851  . TA  T . PASS  AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0.000169;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=NA;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=NA;AF_gnomAD_afr=NA;AF_gnomAD_ami=NA;AF_gnomAD_asj=NA;AF_gnomAD_eas=NA;AF_gnomAD_fin=NA;AF_gnomAD_amr=NA;AF_gnomAD_nfe=NA;AF_gnomAD_sas=NA;AF_gnomAD_oth=NA;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
+chr22 10580900  . ATTC  A . PASS  AF_GDBIG=0.000369;AF_GDBIG_SouthChina=0.000506;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=NA;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=NA;AF_gnomAD_afr=NA;AF_gnomAD_ami=NA;AF_gnomAD_asj=NA;AF_gnomAD_eas=NA;AF_gnomAD_fin=NA;AF_gnomAD_amr=NA;AF_gnomAD_nfe=NA;AF_gnomAD_sas=NA;AF_gnomAD_oth=NA;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
+chr22 10581005  rs1268262722  C T . PASS  AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0.003571;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=9.9e-05;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=2.39067e-05;AF_gnomAD_afr=0;AF_gnomAD_ami=0;AF_gnomAD_asj=0;AF_gnomAD_eas=0;AF_gnomAD_fin=0;AF_gnomAD_amr=0;AF_gnomAD_nfe=5.56091e-05;AF_gnomAD_sas=0;AF_gnomAD_oth=0;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
 ```
 
 #### Quering for input-file
@@ -233,43 +236,44 @@ GDBIGtools annotate -i GDBIG.test.vcf | bgzip > output.GDBIG.test.vcf.gz
 ##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
 ##bcftools_concatVersion=1.9+htslib-1.9
 ##reference=file:/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa
-##INFO=<ID=GDBIG_AF,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0">
-##INFO=<ID=GDBIG_AF_SouthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in SouthChina region">
-##INFO=<ID=GDBIG_AF_CentralChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in CentralChina region">
-##INFO=<ID=GDBIG_AF_EastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in EastChina region">
-##INFO=<ID=GDBIG_AF_SouthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in SouthwestChina region">
-##INFO=<ID=GDBIG_AF_NortheastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NortheastChina region">
-##INFO=<ID=GDBIG_AF_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthwestChina region">
-##INFO=<ID=GDBIG_AF_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from GDBIG_GRCh38_v1.0 in NorthChina region">
+##INFO=<ID=AF_GDBIG,Number=A,Type=Float,Description="Alternate Allele Frequencies in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_SouthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from SouthChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_CentralChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from CentralChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_EastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from EastChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_SouthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from SouthwestChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_NortheastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NortheastChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NorthwestChina region in GDBIG_GRCh38_v1.0">
+##INFO=<ID=AF_GDBIG_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NorthChina region in GDBIG_GRCh38_v1.0">
 ##INFO=<ID=AF_CMDB,Number=A,Type=Float,Description="Alternate Allele Frequencies in CMDB database">
 ##INFO=<ID=AF_ChinaMAP,Number=A,Type=Float,Description="Alternate Allele Frequencies in ChinaMAP database">
 ##INFO=<ID=AF_NyuWa,Number=A,Type=Float,Description="Alternate Allele Frequencies in NyuWa(NCVD) database">
 ##INFO=<ID=AF_WBBC,Number=A,Type=Float,Description="Alternate Allele Frequencies in WBBC database">
-##INFO=<ID=AF_WBBC_North,Number=A,Type=Float,Description="Alternate Allele Frequencies in North region of WBBC database">
-##INFO=<ID=AF_WBBC_Central,Number=A,Type=Float,Description="Alternate Allele Frequencies in Central region of WBBC database">
-##INFO=<ID=AF_WBBC_South,Number=A,Type=Float,Description="Alternate Allele Frequencies in South region of WBBC database">
-##INFO=<ID=AF_WBBC_Lingnan,Number=A,Type=Float,Description="Alternate Allele Frequencies in Lingnan region of WBBC database">
+##INFO=<ID=AF_WBBC_North,Number=A,Type=Float,Description="Alternate Allele Frequencies from North region in WBBC database">
+##INFO=<ID=AF_WBBC_Central,Number=A,Type=Float,Description="Alternate Allele Frequencies from Central region in WBBC database">
+##INFO=<ID=AF_WBBC_South,Number=A,Type=Float,Description="Alternate Allele Frequencies from South region in WBBC database">
+##INFO=<ID=AF_WBBC_Lingnan,Number=A,Type=Float,Description="Alternate Allele Frequencies from Lingnan region in WBBC database">
 ##INFO=<ID=AF_gnomAD,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD database">
-##INFO=<ID=AF_gnomAD_afr,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_afr database">
-##INFO=<ID=AF_gnomAD_ami,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_ami database">
-##INFO=<ID=AF_gnomAD_asj,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_asj database">
-##INFO=<ID=AF_gnomAD_eas,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_eas database">
-##INFO=<ID=AF_gnomAD_fin,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_fin database">
-##INFO=<ID=AF_gnomAD_amr,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_amr database">
-##INFO=<ID=AF_gnomAD_nfe,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_nfe database">
-##INFO=<ID=AF_gnomAD_sas,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_sas database">
-##INFO=<ID=AF_gnomAD_oth,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_oth database">
+##INFO=<ID=AF_gnomAD_afr,Number=A,Type=Float,Description="Alternate Allele Frequencies from African-American/African population in gnomAD database">
+##INFO=<ID=AF_gnomAD_ami,Number=A,Type=Float,Description="Alternate Allele Frequencies from Amish population in gnomAD database">
+##INFO=<ID=AF_gnomAD_asj,Number=A,Type=Float,Description="Alternate Allele Frequencies from Ashkenazi Jewish population in gnomAD database">
+##INFO=<ID=AF_gnomAD_eas,Number=A,Type=Float,Description="Alternate Allele Frequencies from East Asian population in gnomAD database">
+##INFO=<ID=AF_gnomAD_fin,Number=A,Type=Float,Description="Alternate Allele Frequencies from Finnish population in gnomAD database">
+##INFO=<ID=AF_gnomAD_amr,Number=A,Type=Float,Description="Alternate Allele Frequencies from Latino population in gnomAD database">
+##INFO=<ID=AF_gnomAD_nfe,Number=A,Type=Float,Description="Alternate Allele Frequencies from Non-Finnish European population in gnomAD database">
+##INFO=<ID=AF_gnomAD_sas,Number=A,Type=Float,Description="Alternate Allele Frequencies from South Asian population in gnomAD database">
+##INFO=<ID=AF_gnomAD_oth,Number=A,Type=Float,Description="Alternate Allele Frequencies from Other population in gnomAD database">
 ##INFO=<ID=AF_1KGP,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes database">
-##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes AFR database">
-##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes AMR database">
-##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes EAS database">
-##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes EUR database">
-##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes SAS database">
+##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies from African population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies from Admixed American population in 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from East Asian population 1000 Genomes database">
+##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in from European population 1000 Genomes database">
+##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from South Asian population 1000 Genomes database">
 #CHROM  POS ID  REF ALT QUAL  FILTER  INFO
-chr22 10515882  rs1490973086  G A . PASS  GDBIG_AF=0.105296;GDBIG_AF_SouthChina=0.106336;GDBIG_AF_CentralChina=0.116307;GDBIG_AF_EastChina=0.113487;GDBIG_AF_SouthwestChina=0.078571;GDBIG_AF_NortheastChina=0.098837;GDBIG_AF_NorthwestChina=0.061644;GDBIG_AF_NorthChina=0.057377;AF_CMDB=Na;AF_ChinaMAP=Na;AF_NyuWa=Na;AF_WBBC=Na;AF_WBBC_North=Na;AF_WBBC_Central=Na;AF_WBBC_South=Na;AF_WBBC_Lingnan=Na;AF_gnomAD=0.0918221;AF_gnomAD_afr=0.0347594;AF_gnomAD_ami=0.123162;AF_gnomAD_asj=0.196657;AF_gnomAD_eas=0.261649;AF_gnomAD_fin=0.171307;AF_gnomAD_amr=0.0983247;AF_gnomAD_nfe=0.10664;AF_gnomAD_sas=0.20235;AF_gnomAD_oth=0.11147;AF_1KGP=Na;AF_1KGP_AFR=Na;AF_1KGP_AMR=Na;AF_1KGP_EAS=Na;AF_1KGP_EUR=Na;AF_1KGP_SAS=Na;AR2=0.63;DR2=0.68
-chr22 10516264  . TAC T . PASS  GDBIG_AF=0.000123;GDBIG_AF_SouthChina=0;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0.001645;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;GDBIG_AF_NorthwestChina=0;GDBIG_AF_NorthChina=0;AF_CMDB=Na;AF_ChinaMAP=Na;AF_NyuWa=Na;AF_WBBC=Na;AF_WBBC_North=Na;AF_WBBC_Central=Na;AF_WBBC_South=Na;AF_WBBC_Lingnan=Na;AF_gnomAD=Na;AF_gnomAD_afr=Na;AF_gnomAD_ami=Na;AF_gnomAD_asj=Na;AF_gnomAD_eas=Na;AF_gnomAD_fin=Na;AF_gnomAD_amr=Na;AF_gnomAD_nfe=Na;AF_gnomAD_sas=Na;AF_gnomAD_oth=Na;AF_1KGP=Na;AF_1KGP_AFR=Na;AF_1KGP_AMR=Na;AF_1KGP_EAS=Na;AF_1KGP_EUR=Na;AF_1KGP_SAS=Na;AR2=0.78;DR2=0.78
+chr22 10515882  rs1490973086  G A . PASS  AR2=0.63;DR2=0.68;AF_GDBIG=0.105296;AF_GDBIG_SouthChina=0.106336;AF_GDBIG_CentralChina=0.116307;AF_GDBIG_EastChina=0.113487;AF_GDBIG_SouthwestChina=0.078571;AF_GDBIG_NortheastChina=0.098837;AF_GDBIG_NorthwestChina=0.061644;AF_GDBIG_NorthChina=0.057377;AF_CMDB=NA;AF_ChinaMAP=NA;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=0.0918221;AF_gnomAD_afr=0.0347594;AF_gnomAD_ami=0.123162;AF_gnomAD_asj=0.196657;AF_gnomAD_eas=0.261649;AF_gnomAD_fin=0.171307;AF_gnomAD_amr=0.0983247;AF_gnomAD_nfe=0.10664;AF_gnomAD_sas=0.20235;AF_gnomAD_oth=0.11147;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
+chr22 10516264  . TAC T . PASS  AR2=0.78;DR2=0.78;AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0.001645;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=NA;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=NA;AF_gnomAD_afr=NA;AF_gnomAD_ami=NA;AF_gnomAD_asj=NA;AF_gnomAD_eas=NA;AF_gnomAD_fin=NA;AF_gnomAD_amr=NA;AF_gnomAD_nfe=NA;AF_gnomAD_sas=NA;AF_gnomAD_oth=NA;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
 chr22 10516615  rs1228174166  TTTG  T . PASS  AR2=0.221;DR2=0.222
-chr22 10518420  rs1177693979  CA  C . PASS  GDBIG_AF=0.000246;GDBIG_AF_SouthChina=0.000337;GDBIG_AF_CentralChina=0;GDBIG_AF_EastChina=0;GDBIG_AF_SouthwestChina=0;GDBIG_AF_NortheastChina=0;GDBIG_AF_NorthwestChina=0;GDBIG_AF_NorthChina=0;AF_CMDB=Na;AF_ChinaMAP=0.00069;AF_NyuWa=Na;AF_WBBC=Na;AF_WBBC_North=Na;AF_WBBC_Central=Na;AF_WBBC_South=Na;AF_WBBC_Lingnan=Na;AF_gnomAD=Na;AF_gnomAD_afr=Na;AF_gnomAD_ami=Na;AF_gnomAD_asj=Na;AF_gnomAD_eas=Na;AF_gnomAD_fin=Na;AF_gnomAD_amr=Na;AF_gnomAD_nfe=Na;AF_gnomAD_sas=Na;AF_gnomAD_oth=Na;AF_1KGP=Na;AF_1KGP_AFR=Na;
+chr22 10518420  rs1177693979  CA  C . PASS  AR2=0.547;DR2=0.607;AF_GDBIG=0.000246;AF_GDBIG_SouthChina=0.000337;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=0.00069;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=NA;AF_gnomAD_afr=NA;AF_gnomAD_ami=NA;AF_gnomAD_asj=NA;AF_gnomAD_eas=NA;AF_gnomAD_fin=NA;AF_gnomAD_amr=NA;AF_gnomAD_nfe=NA;AF_gnomAD_sas=NA;AF_gnomAD_oth=NA;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
+chr22 10519243  rs1186022611  A AG  . PASS  AR2=0.673;DR2=0.707;AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0.000169;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=0.000446;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=2.60797e-05;AF_gnomAD_afr=0;AF_gnomAD_ami=0;AF_gnomAD_asj=0;AF_gnomAD_eas=0.000484966;AF_gnomAD_fin=0;AF_gnomAD_amr=0.000154607;AF_gnomAD_nfe=0;AF_gnomAD_sas=0;AF_gnomAD_oth=0;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
 ```
 
 <br />

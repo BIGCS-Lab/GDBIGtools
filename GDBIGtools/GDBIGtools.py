@@ -29,38 +29,38 @@ GDBIG_API_VERSION = '1.1.4'
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
     '##FILTER=<ID=PASS,Description="All filters passed">',
-    '##INFO=<ID=GDBIG_AF,Number=A,Type=Float,Description="Alternate Allele Frequencies from {}">'.format(GDBIG_DATASET_VERSION),
-    '##INFO=<ID=GDBIG_AF_SouthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from {} in SouthChina region">'.format(GDBIG_DATASET_VERSION),
-    '##INFO=<ID=GDBIG_AF_CentralChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from {} in CentralChina region">'.format(GDBIG_DATASET_VERSION),
-    '##INFO=<ID=GDBIG_AF_EastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from {} in EastChina region">'.format(GDBIG_DATASET_VERSION),
-    '##INFO=<ID=GDBIG_AF_SouthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from {} in SouthwestChina region">'.format(GDBIG_DATASET_VERSION),
-    '##INFO=<ID=GDBIG_AF_NortheastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from {} in NortheastChina region">'.format(GDBIG_DATASET_VERSION),
-    '##INFO=<ID=GDBIG_AF_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from {} in NorthwestChina region">'.format(GDBIG_DATASET_VERSION),
-    '##INFO=<ID=GDBIG_AF_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from {} in NorthChina region">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG,Number=A,Type=Float,Description="Alternate Allele Frequencies in {}">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG_SouthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from SouthChina region in {}">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG_CentralChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from CentralChina region in {}">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG_EastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from EastChina region in {}">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG_SouthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from SouthwestChina region in {}">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG_NortheastChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NortheastChina region in {}">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG_NorthwestChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NorthwestChina region in {}">'.format(GDBIG_DATASET_VERSION),
+    '##INFO=<ID=AF_GDBIG_NorthChina,Number=A,Type=Float,Description="Alternate Allele Frequencies from NorthChina region in {}">'.format(GDBIG_DATASET_VERSION),
     '##INFO=<ID=AF_CMDB,Number=A,Type=Float,Description="Alternate Allele Frequencies in CMDB database">',
     '##INFO=<ID=AF_ChinaMAP,Number=A,Type=Float,Description="Alternate Allele Frequencies in ChinaMAP database">',
     '##INFO=<ID=AF_NyuWa,Number=A,Type=Float,Description="Alternate Allele Frequencies in NyuWa(NCVD) database">',
     '##INFO=<ID=AF_WBBC,Number=A,Type=Float,Description="Alternate Allele Frequencies in WBBC database">',
-    '##INFO=<ID=AF_WBBC_North,Number=A,Type=Float,Description="Alternate Allele Frequencies in North region of WBBC database">',
-    '##INFO=<ID=AF_WBBC_Central,Number=A,Type=Float,Description="Alternate Allele Frequencies in Central region of WBBC database">',
-    '##INFO=<ID=AF_WBBC_South,Number=A,Type=Float,Description="Alternate Allele Frequencies in South region of WBBC database">',
-    '##INFO=<ID=AF_WBBC_Lingnan,Number=A,Type=Float,Description="Alternate Allele Frequencies in Lingnan region of WBBC database">',
+    '##INFO=<ID=AF_WBBC_North,Number=A,Type=Float,Description="Alternate Allele Frequencies from North region in WBBC database">',
+    '##INFO=<ID=AF_WBBC_Central,Number=A,Type=Float,Description="Alternate Allele Frequencies from Central region in WBBC database">',
+    '##INFO=<ID=AF_WBBC_South,Number=A,Type=Float,Description="Alternate Allele Frequencies from South region in WBBC database">',
+    '##INFO=<ID=AF_WBBC_Lingnan,Number=A,Type=Float,Description="Alternate Allele Frequencies from Lingnan region in WBBC database">',
     '##INFO=<ID=AF_gnomAD,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD database">',
-    '##INFO=<ID=AF_gnomAD_afr,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_afr database">',
-    '##INFO=<ID=AF_gnomAD_ami,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_ami database">',
-    '##INFO=<ID=AF_gnomAD_asj,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_asj database">',
-    '##INFO=<ID=AF_gnomAD_eas,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_eas database">',
-    '##INFO=<ID=AF_gnomAD_fin,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_fin database">',
-    '##INFO=<ID=AF_gnomAD_amr,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_amr database">',
-    '##INFO=<ID=AF_gnomAD_nfe,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_nfe database">',
-    '##INFO=<ID=AF_gnomAD_sas,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_sas database">',
-    '##INFO=<ID=AF_gnomAD_oth,Number=A,Type=Float,Description="Alternate Allele Frequencies in gnomAD_oth database">',
+    '##INFO=<ID=AF_gnomAD_afr,Number=A,Type=Float,Description="Alternate Allele Frequencies from African-American/African population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_ami,Number=A,Type=Float,Description="Alternate Allele Frequencies from Amish population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_asj,Number=A,Type=Float,Description="Alternate Allele Frequencies from Ashkenazi Jewish population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_eas,Number=A,Type=Float,Description="Alternate Allele Frequencies from East Asian population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_fin,Number=A,Type=Float,Description="Alternate Allele Frequencies from Finnish population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_amr,Number=A,Type=Float,Description="Alternate Allele Frequencies from Latino population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_nfe,Number=A,Type=Float,Description="Alternate Allele Frequencies from Non-Finnish European population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_sas,Number=A,Type=Float,Description="Alternate Allele Frequencies from South Asian population in gnomAD database">',
+    '##INFO=<ID=AF_gnomAD_oth,Number=A,Type=Float,Description="Alternate Allele Frequencies from Other population in gnomAD database">',
     '##INFO=<ID=AF_1KGP,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes database">',
-    '##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes AFR database">',
-    '##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes AMR database">',
-    '##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes EAS database">',
-    '##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes EUR database">',
-    '##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in 1000 Genomes SAS database">',
+    '##INFO=<ID=AF_1KGP_AFR,Number=A,Type=Float,Description="Alternate Allele Frequencies from African population in 1000 Genomes database">',
+    '##INFO=<ID=AF_1KGP_AMR,Number=A,Type=Float,Description="Alternate Allele Frequencies from Admixed American population in 1000 Genomes database">',
+    '##INFO=<ID=AF_1KGP_EAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from East Asian population 1000 Genomes database">',
+    '##INFO=<ID=AF_1KGP_EUR,Number=A,Type=Float,Description="Alternate Allele Frequencies in from European population 1000 Genomes database">',
+    '##INFO=<ID=AF_1KGP_SAS,Number=A,Type=Float,Description="Alternate Allele Frequencies in from South Asian population 1000 Genomes database">',
     '##reference=file:/human_reference/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa',
     '#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO'
 ]
@@ -140,7 +140,7 @@ def json2vcf(res, stdout = True):
         w = vv['Data']['otherDB']
         vcf_line = ['chr' + v['Chrom'], v['Position'], v['RS'], v['Ref'], v['Alt'], '.', 'PASS']
 
-        vcf_line1 = 'GDBIG_AF={};GDBIG_AF_SouthChina={};GDBIG_AF_CentralChina={};GDBIG_AF_EastChina={};GDBIG_AF_SouthwestChina={};GDBIG_AF_NortheastChina={};GDBIG_AF_NorthwestChina={};GDBIG_AF_NorthChina={}'.format(v['AF'],v['AF_SouthChina'],v['AF_CentralChina'],v['AF_EastChina'],v['AF_SouthwestChina'],v['AF_NortheastChina'],v['AF_NorthwestChina'],v['AF_NorthChina'])
+        vcf_line1 = 'AF_GDBIG={};AF_GDBIG_SouthChina={};AF_GDBIG_CentralChina={};AF_GDBIG_EastChina={};AF_GDBIG_SouthwestChina={};AF_GDBIG_NortheastChina={};AF_GDBIG_NorthwestChina={};AF_GDBIG_NorthChina={}'.format(v['AF'],v['AF_SouthChina'],v['AF_CentralChina'],v['AF_EastChina'],v['AF_SouthwestChina'],v['AF_NortheastChina'],v['AF_NorthwestChina'],v['AF_NorthChina'])
 
         CMDB = w['CMDB']['AF'] if w['CMDB'] else 'NA'
         ChinaMap = w['ChinaMap']['AF'] if w['ChinaMap'] else 'NA'
@@ -202,7 +202,7 @@ def GDBIGtools():
 def login(api_key, api_secret, url):
     status_code, result = getVariant(api_key, api_secret, url)
     if status_code != 200:
-        sys.stderr.write('[Error] while obtaining your GDBIG API authentication server. You may do not have the API access or the API is wrong.\n[Error] Please confirm your API information [http://gdbig.bigcs.com.cn/api.html]')
+        sys.stderr.write('[Error] while obtaining your GDBIG API authentication server. You may do not have the API access or the API is wrong.\n[Error] Please confirm your API information [http://gdbig.bigcs.com.cn/api.html]\n')
         return
     else:
         create_authentication(api_key, api_secret, url)
