@@ -37,7 +37,6 @@ pip install --upgrade GDBIGtools
 ```
 
 #### Help
-
 type `GDBIGtools -h/--help` for detail.
 ```
 Usage: GDBIGtools [OPTIONS] COMMAND [ARGS]...
@@ -55,7 +54,6 @@ Commands:
 ```
 
 #### Login
-
 Login with `GDBIGtools` by using GDBIG API access key, which could be found from [**<API ACCESS\>**](http://gdbig.bigcs.com.cn/api.html) if you have apply for it.
 
 [![GDBIG_genomics_api](assets/figures/GDBIG_genomics_api.png)](assets/figures/GDBIG_genomics_api.png)
