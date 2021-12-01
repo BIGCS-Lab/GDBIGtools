@@ -24,7 +24,7 @@ GDBIG_DIR = '.gdbig'
 GDBIG_TOKENSTORE = 'authaccess.yaml'
 
 GDBIG_DATASET_VERSION = 'GDBIG_GRCh38_v1.0'
-GDBIG_API_VERSION = '1.1.2'
+GDBIG_API_VERSION = '1.1.4'
 
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
@@ -102,13 +102,17 @@ def getVariantID(api_key, api_secret, url, search_key="rs1801133"):
     r = requests.get(url+"/openapi/search",{'api_key':api_key, 'key':search_key, 'api_hash':req_hash})
     res = json.loads(r.text)
     IDlist = []
-    try:
-        for l in res['Data']['SNPs']:
-            newid = "%s:%s-%s-%s"%(l['Chrom'],l['Position'],l['Ref'],l['Alt'])
-            IDlist.append(newid)
-    except:
-        pass
-    return(r.status_code, res, IDlist)
+    
+    if res['code']=='geneID':
+        return(r.status_code, res, IDlist)
+    elif r.status_code!=200:
+        return(r.status_code, res, IDlist)
+    else:
+        if res['Data']:
+            for l in res['Data']['SNPs']:
+                newid = "%s:%s-%s-%s"%(l['Chrom'],l['Position'],l['Ref'],l['Alt'])
+                IDlist.append(newid)
+        return(r.status_code, res, IDlist)
 
 def getVariant(api_key, api_secret, url, search_key="rs1801133"):
     h1 = hashlib.md5()
@@ -138,18 +142,18 @@ def json2vcf(res, stdout = True):
 
         vcf_line1 = 'GDBIG_AF={};GDBIG_AF_SouthChina={};GDBIG_AF_CentralChina={};GDBIG_AF_EastChina={};GDBIG_AF_SouthwestChina={};GDBIG_AF_NortheastChina={};GDBIG_AF_NorthwestChina={};GDBIG_AF_NorthChina={}'.format(v['AF'],v['AF_SouthChina'],v['AF_CentralChina'],v['AF_EastChina'],v['AF_SouthwestChina'],v['AF_NortheastChina'],v['AF_NorthwestChina'],v['AF_NorthChina'])
 
-        CMDB = w['CMDB']['AF'] if w['CMDB'] else 'Na'
-        ChinaMap = w['ChinaMap']['AF'] if w['ChinaMap'] else 'Na'
-        NyuWa = w['NyuWa']['AF'] if w['NyuWa'] else 'Na'
+        CMDB = w['CMDB']['AF'] if w['CMDB'] else 'NA'
+        ChinaMap = w['ChinaMap']['AF'] if w['ChinaMap'] else 'NA'
+        NyuWa = w['NyuWa']['AF'] if w['NyuWa'] else 'NA'
         vcf_line2 = 'AF_CMDB={};AF_ChinaMAP={};AF_NyuWa={}'.format(CMDB,ChinaMap,NyuWa)
         
-        WBBC = w['WBBC'] if w['WBBC'] else {'AF':'Na','South_AF':'Na','Central_AF':'Na','South_AF':'Na','Lingnan_AF':'Na'}
+        WBBC = w['WBBC'] if w['WBBC'] else {'AF':'NA','South_AF':'NA','Central_AF':'NA','South_AF':'NA','Lingnan_AF':'NA'}
         vcf_line3 = 'AF_WBBC={};AF_WBBC_North={};AF_WBBC_Central={};AF_WBBC_South={};AF_WBBC_Lingnan={}'.format(WBBC['AF'],WBBC['South_AF'],WBBC['Central_AF'],WBBC['South_AF'],WBBC['Lingnan_AF'])
 
-        gnomAD = w['gnomAD'] if w['gnomAD'] else {'AF_Total':'Na','AF_afr':'Na','AF_ami':'Na','AF_asj':'Na','AF_eas':'Na','AF_fin':'Na','AF_amr':'Na','AF_nfe':'Na','AF_sas':'Na','AF_oth':'Na'}
+        gnomAD = w['gnomAD'] if w['gnomAD'] else {'AF_Total':'NA','AF_afr':'NA','AF_ami':'NA','AF_asj':'NA','AF_eas':'NA','AF_fin':'NA','AF_amr':'NA','AF_nfe':'NA','AF_sas':'NA','AF_oth':'NA'}
         vcf_line4 = 'AF_gnomAD={};AF_gnomAD_afr={};AF_gnomAD_ami={};AF_gnomAD_asj={};AF_gnomAD_eas={};AF_gnomAD_fin={};AF_gnomAD_amr={};AF_gnomAD_nfe={};AF_gnomAD_sas={};AF_gnomAD_oth={}'.format(gnomAD['AF_Total'],gnomAD['AF_afr'],gnomAD['AF_ami'],gnomAD['AF_asj'],gnomAD['AF_eas'],gnomAD['AF_fin'],gnomAD['AF_amr'],gnomAD['AF_nfe'],gnomAD['AF_sas'],gnomAD['AF_oth'])
 
-        OneK_Genomes = w['OneK_Genomes'] if w['OneK_Genomes'] else {'AF':'Na','AFR_AF':'Na','AMR_AF':'Na','EAS_AF':'Na','EUR_AF':'Na','SAS_AF':'Na'}
+        OneK_Genomes = w['OneK_Genomes'] if w['OneK_Genomes'] else {'AF':'NA','AFR_AF':'NA','AMR_AF':'NA','EAS_AF':'NA','EUR_AF':'NA','SAS_AF':'NA'}
         vcf_line5 = 'AF_1KGP={};AF_1KGP_AFR={};AF_1KGP_AMR={};AF_1KGP_EAS={};AF_1KGP_EUR={};AF_1KGP_SAS={}'.format(OneK_Genomes['AF'],OneK_Genomes['AFR_AF'],OneK_Genomes['AMR_AF'],OneK_Genomes['EAS_AF'],OneK_Genomes['EUR_AF'],OneK_Genomes['SAS_AF'])
         vcf_line.append("%s;%s;%s;%s;%s"%(vcf_line1,vcf_line2,vcf_line3,vcf_line4,vcf_line5))
         if stdout:
@@ -301,19 +305,13 @@ def annotate(input_vcf):
                 if GDBIG_variant[4].upper() in alt.split(',') and GDBIG_variant[3].upper() == ref:
                     new_info, info_set = [], set()
                     if in_fields[7] == ".":
-                        list_info = GDBIG_variant[7].split(';')
+                        list_info = GDBIG_variant[7]
                     else:
-                        list_info = GDBIG_variant[7].split(';') + in_fields[7].split(';')
-                    for f in list_info:
-                        n = f.split('=')[0]
-                        if n not in info_set:
-                            new_info.append(f)
-                            info_set.add(n)
-                    info = ';'.join(new_info)
+                        list_info = in_fields[7] +';'+ GDBIG_variant[7]
                     if len(in_fields) > 8:
-                        sys.stdout.write('{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(chromosome, position, in_fields[2], ref, alt, in_fields[5], in_fields[6], info, '\t'.join(in_fields[8:])))
+                        sys.stdout.write('{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(chromosome, position, in_fields[2], ref, alt, in_fields[5], in_fields[6], list_info, '\t'.join(in_fields[8:])))
                     else:
-                        sys.stdout.write('{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(chromosome, position, in_fields[2], ref, alt, in_fields[5], in_fields[6], info))
+                        sys.stdout.write('{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(chromosome, position, in_fields[2], ref, alt, in_fields[5], in_fields[6], list_info))
                 else:
                     sys.stdout.write('{}\n'.format(in_line.strip()))
 

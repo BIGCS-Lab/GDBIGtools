@@ -24,7 +24,7 @@ GDBIG_DIR = '.gdbig'
 GDBIG_TOKENSTORE = 'authaccess.yaml'
 
 GDBIG_DATASET_VERSION = 'GDBIG_GRCh38_v1.0'
-GDBIG_API_VERSION = '1.1.2'
+GDBIG_API_VERSION = '1.1.3'
 
 VCF_HEADER = [
     '##fileformat=VCFv4.2',
