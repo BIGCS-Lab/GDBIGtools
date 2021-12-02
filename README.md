@@ -56,7 +56,7 @@ Commands:
 #### Login ####
 Login with `GDBIGtools` by using GDBIG API access key, which could be found from [**<API ACCESS\>**](http://gdbig.bigcs.com.cn/api.html) if you have apply for it.
 
-[![GDBIG_genomics_api](assets/figures/GDBIG_genomics_api.png)](assets/figures/GDBIG_genomics_api.png)
+[![GDBIG_genomics_api](https://github.com/BIGCS-Lab/GDBIGtools/blob/main/assets/figures/GDBIG_genomics_api.png)](https://github.com/BIGCS-Lab/GDBIGtools/blob/main/assets/figures/GDBIG_genomics_api.png)
 
 \*Reset your GDBIG API access key if it had been leaked out.
 
