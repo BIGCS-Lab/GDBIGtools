@@ -7,6 +7,7 @@ GDBIGtools: A command line tools for GDBIG varaints browser
 
 Introduction
 ------------
+
 The [Genome Database of Born In Guangzhou Cohort study(GDBIG)](http://gdbig.bigcs.com.cn) is based on thousands of trios/duos families recruited by the BIGCS Project to conduct whole-genome-sequencing, genome variation detection, annotation and analysis. Phase I including 332 trios (father-mother-offspring), 1,406 duos (14 father-offspring and 1,392 mother-offspring) and 245 single individuals (70 infants, 150 adult females and 25 adult males), for a total of 4,053 individual samples. The GDBIG delivers periodical and useful variation information and scientific insights derived from the analysis of thousands of born in Guangzhou China sequencing data. The results aim to promote genetic research and precision medicine actions in China. The delivering information includes any of detected variants and the corresponding allele frequency, annotation, frequency comparison to the global populations from existing databases, etc.
 
 GDBIG variant browser allows authorized access its data through an Genomics API and **GDBIGtools** is a convenient command line tools for the [GDBIG](http://gdbig.bigcs.com.cn) variants browser.
