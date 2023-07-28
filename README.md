@@ -30,18 +30,22 @@ Up to now, the following databases are integrated:
 Preparation
 ------------
 
-#### Installation ####
+### Installation
+
 Install the released version by `pip` (Only support Python3.6+):
 
 ```bash
 pip install GDBIGtools
+
 # or upgrade
 pip install --upgrade GDBIGtools
 ```
 
-#### Help ####
+### Help
+
 type `GDBIGtools -h/--help` for detail.
-```
+
+```bash
 Usage: GDBIGtools [OPTIONS] COMMAND [ARGS]...
 
 Options:
@@ -56,7 +60,7 @@ Commands:
   version    GDBIGtools version: 1.1.6
 ```
 
-#### Login ####
+### Login
 Login with `GDBIGtools` by using GDBIG API access key, which could be found from [**<API ACCESS\>**](http://gdbig.bigcs.com.cn/api.html) if you have apply for it.
 
 [![GDBIG_genomics_api](https://raw.githubusercontent.com/BIGCS-Lab/GDBIGtools/main/assets/figures/GDBIG_genomics_api.png)](https://raw.githubusercontent.com/BIGCS-Lab/GDBIGtools/main/assets/figures/GDBIG_genomics_api.png)
@@ -82,16 +86,17 @@ GDBIGtools logout
 
 Quick start
 ------------
-**\*Note**: Please enable your API access in [**GDBIG API**](http://gdbig.bigcs.com.cn/api.html) before using **GDBIGtools**.
 
-#### Query a single variant ####
+> **Note**: Please enable your API access in [**GDBIG API**](http://gdbig.bigcs.com.cn/api.html) before using **GDBIGtools**.
+
+### Query a single variant
 
 Variants could be retrieved from GDBIG by using `query`.
 
-Run `GDBIGtools query -h/--help` to see all available options. There\'re
+Run `GDBIGtools query -h/--help` to see all available options. There're
 two different ways to retrive variants.
 
-One is to use `-s` parameters for variants on command, the other way uses `-l` for input-file.
+One is to use `-s` parameters for variants on command, the other uses `-l` for input-file.
 
 Here are examples for quering varaints on command.
 
@@ -103,7 +108,7 @@ GDBIGtools query -s ENST00000269305
 GDBIGtools query -s MTHFR
 ```
 
-It\'ll take about 1 minute to complete about 2,000 variants\' sites. 
+It'll take about 1 minute to complete about 2,000 variants' sites. 
 Then you will get 32 new fields with the information of GDBIG in VCF INFO column:
 
 -   `AF_GDBIG`: Alternate Allele Frequencies in GDBIG;
@@ -184,7 +189,7 @@ chr22 10580900  . ATTC  A . PASS  AF_GDBIG=0.000369;AF_GDBIG_SouthChina=0.000506
 chr22 10581005  rs1268262722  C T . PASS  AF_GDBIG=0.000123;AF_GDBIG_SouthChina=0;AF_GDBIG_CentralChina=0;AF_GDBIG_EastChina=0;AF_GDBIG_SouthwestChina=0.003571;AF_GDBIG_NortheastChina=0;AF_GDBIG_NorthwestChina=0;AF_GDBIG_NorthChina=0;AF_CMDB=NA;AF_ChinaMAP=9.9e-05;AF_NyuWa=NA;AF_WBBC=NA;AF_WBBC_North=NA;AF_WBBC_Central=NA;AF_WBBC_South=NA;AF_WBBC_Lingnan=NA;AF_gnomAD=2.39067e-05;AF_gnomAD_afr=0;AF_gnomAD_ami=0;AF_gnomAD_asj=0;AF_gnomAD_eas=0;AF_gnomAD_fin=0;AF_gnomAD_amr=0;AF_gnomAD_nfe=5.56091e-05;AF_gnomAD_sas=0;AF_gnomAD_oth=0;AF_1KGP=NA;AF_1KGP_AFR=NA;AF_1KGP_AMR=NA;AF_1KGP_EAS=NA;AF_1KGP_EUR=NA;AF_1KGP_SAS=NA
 ```
 
-#### Quering for input-file ####
+### Quering for input-file
 
 A list of variants could be retrieved from GDBIG by using the parameters of `-l` when apply by `query`.
 
@@ -197,6 +202,7 @@ Format for [positions.list](tests/positions.list), could be a mixture of
 - `ensembl transcript ID`
 - `gene symbol` and `ensembl gene ID`
 - `chrom   position` and `chrom    start   end`, even with or without `chr` in the chromosome ID column
+
 
 ```
 #search key words
@@ -229,7 +235,7 @@ GDBIGtools annotate -i GDBIG.test.vcf | bgzip > output.GDBIG.test.vcf.gz
 
 `output.GDBIG.test.vcf.gz` is VCF format and looks like below:
 
-```bash
+```
 ##fileformat=VCFv4.2
 ##FILTER=<ID=PASS,Description="All filters passed">
 ##FORMAT=<ID=DS,Number=1,Type=Float,Description="estimated ALT dose [P(RA) + P(AA)]">
@@ -280,5 +286,5 @@ chr22 10519243  rs1186022611  A AG  . PASS  AR2=0.673;DR2=0.707;AF_GDBIG=0.00012
 <br />
 
 Citation
-------------
+--------
 -
