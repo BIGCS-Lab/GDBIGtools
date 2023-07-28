@@ -1,0 +1,15 @@
+gittests/data/
+
+venv/
+venv3/
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+
+*.sh
+*.py[cod]
+*.so
+.*.swp
+.DS_Store
+.idea/
