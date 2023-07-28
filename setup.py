@@ -20,9 +20,9 @@ meta = Namespace(
     __DISTNAME__="GDBIGtools",
     __AUTHOR__="Chengrui Wang",
     __AUTHOR_EMAIL__="aiyacharley@outlook.com",
-    __URL__="https://github.com/aiyacharley/GDBIGtools",
+    __URL__="https://github.com/BIGCS-Lab/GDBIGtools",
     __LICENSE__="BSD (3-clause)",
-    __DOWNLOAD_URL__="https://github.com/aiyacharley/GDBIGtools",
+    __DOWNLOAD_URL__="https://github.com/BIGCS-Lab/GDBIGtools",
     __VERSION__="1.1.6",
 )
 
