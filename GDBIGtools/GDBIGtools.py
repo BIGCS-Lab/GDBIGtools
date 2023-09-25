@@ -98,7 +98,7 @@ def authaccess_exists():
 def create_authentication(api_key, api_secret, url):
     p = os.path.join(USER_HOME, GDBIG_DIR)
     if not os.path.isdir(p):
-        os.mkdir(p, stat.S_IRWXU)  ##0700
+        os.mkdir(p, stat.S_IRWXU)  ## 0700
 
     p = os.path.join(p, GDBIG_TOKENSTORE)
     with open(p, 'w') as tokenstore:
