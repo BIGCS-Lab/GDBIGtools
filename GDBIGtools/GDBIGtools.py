@@ -399,5 +399,7 @@ GDBIGtools.add_command(print_api)
 GDBIGtools.add_command(query)
 GDBIGtools.add_command(annotate)
 GDBIGtools.add_command(version)
+
 if __name__ == '__main__':
+    # main function
     GDBIGtools()
