@@ -287,4 +287,8 @@ chr22 10519243  rs1186022611  A AG  . PASS  AR2=0.673;DR2=0.707;AF_GDBIG=0.00012
 
 Citation
 --------
+
+Shujia Huang, Siyang Liu, Mingxi Huang. et al. The Born in Guangzhou Cohort Study enables generational genetic discoveries. *Nature* 626, 565–573 (2024). <https://doi.org/10.1038/s41586-023-06988-4>
+
+
 -
